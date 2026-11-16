@@ -2,6 +2,14 @@
   "schema_version": 2,
   "commands": [
     {
+      "name": "scenario-results",
+      "module": "scenarios",
+      "skill": "dayz-gate",
+      "description": "Локальная проверка заявленных результатов сценариев, side и source/PBO SHA без запуска игры",
+      "mutates": false,
+      "aliases": []
+    },
+    {
       "name": "init",
       "module": "cli",
       "skill": "dayz-init",

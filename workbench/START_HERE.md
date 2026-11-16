@@ -12,3 +12,7 @@
 Точный синтаксис: `<command> --help`, `task --help`. Процесс заданий — TASK_PROTOCOL.md,
 поиск — RESEARCH.md. Внешние модели и корпуса необязательны; сеть для research
 включается только явным флагом. Deployment targets по умолчанию пусты.
+
+Для полных static gates задай `gate --source ... --type-db ... --types-from ...`.
+Проверяй отчёты игровых сценариев через `scenario-results --spec ... --results ...`;
+схема, SHA и статусы приведены в [TASK_PROTOCOL.md](TASK_PROTOCOL.md).

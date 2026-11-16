@@ -26,6 +26,11 @@ from common import AGENT, VERSION, atomic_json, checked_path, load_config, now, 
 CORE_COMMANDS = {"doctor", "backends", "search", "context", "recall", "remember", "cache", "verify", "snapshot", "check"}
 PIPELINE_COMMANDS = {"preflight", "scaffold", "lint", "build", "inspect-pbo", "deploy"}
 DIAGNOSTIC_COMMANDS = {"resource-audit", "layout-audit", "api-snapshot", "api-diff", "logs", "release", "texture", "session-plan", "config-check"}
+SCENARIO_COMMANDS = {"scenario-results"}
+STATIC_GATE_NAMES = {
+    "enforce_preflight.py", "enforce_name_collisions.py", "enforce_cast_relations.py",
+    "enforce_local_declarations.py", "enforce_numeric_context.py", "enforce_identifier_bindings.py",
+}
 ALIASES = {
     "/dayz-init": "init", "/dayz-preflight": "preflight", "/dayz-new-mod": "scaffold",
     "/dayz-build-pbo": "build", "/dayz-deploy-pbo": "deploy", "/dayz-lint": "lint",
@@ -102,7 +107,7 @@ def core(arguments):
 
 def history(command, payload, config):
     # Храним результаты инструментов, не текст пользовательских запросов/памяти.
-    if command in CORE_COMMANDS or command in {"commands", "route", "team", "health", "init", "panel", "task"}:
+    if command in CORE_COMMANDS or command in SCENARIO_COMMANDS or command in {"commands", "route", "team", "health", "init", "panel", "task"}:
         return
     if command == "research":
         payload = {"status": payload.get("status", "unknown"), "hits": len(payload.get("hits", [])),
@@ -200,16 +205,34 @@ def gate(arguments, config):
     parser = argparse.ArgumentParser(prog="gate")
     parser.add_argument("--source", required=True)
     parser.add_argument("--build-output")
+    parser.add_argument("--type-db", help="SQLite база типов для полных static gates")
+    parser.add_argument("--types-from", help="Полный source для типов; требуется вместе с type-db")
     parser.add_argument("--run", action="store_true", help="Выполнить сборку, если задан build-output")
     args = parser.parse_args(arguments)
+    if bool(args.type_db) != bool(args.types_from):
+        parser.error("--type-db и --types-from задаются вместе")
     stages = []
     for name, function in (("lint", pipeline.main), ("resource-audit", diagnostics.main)):
         code, value = invoke_module(type("Tool", (), {"main": staticmethod(function)}), [name, "--source", args.source])
         stages.append({"stage": name, "exit_code": code, "result": value})
-    format_tool = AGENT / ".agents/skills/dayz-ai-engineering/scripts/enforce_preflight.py"
-    process = subprocess.run([sys.executable, "-B", "-X", "utf8", str(format_tool), args.source, "--strict"],
-                             capture_output=True, text=True, encoding="utf-8", timeout=90)
-    stages.append({"stage": "Enforce_source_form", "exit_code": process.returncode, "output": process.stdout[-5000:]})
+    skipped = ["Enforce_compiler", "runtime_behavior", "visual", "load"]
+    if args.type_db:
+        code, value = core(["check", "--source", args.source, "--type-db", args.type_db, "--types-from", args.types_from, "--run"])
+        rows = value.get("results") if isinstance(value, dict) else None
+        valid = (isinstance(rows, list) and len(rows) == len(STATIC_GATE_NAMES)
+                 and all(isinstance(row, dict) and isinstance(row.get("gate"), str)
+                         and type(row.get("exit_code")) is int and row["exit_code"] == 0 for row in rows)
+                 and {row["gate"] for row in rows} == STATIC_GATE_NAMES
+                 and value.get("mode") == "run_static_gates" and value.get("ok") is True)
+        if not valid:
+            code = code or 1
+        stages.append({"stage": "full_static_gates", "exit_code": code, "result": value})
+    else:
+        format_tool = AGENT / ".agents/skills/dayz-ai-engineering/scripts/enforce_preflight.py"
+        process = subprocess.run([sys.executable, "-B", "-X", "utf8", str(format_tool), args.source, "--strict"],
+                                 capture_output=True, text=True, encoding="utf-8", timeout=90)
+        stages.append({"stage": "Enforce_source_form", "exit_code": process.returncode, "output": process.stdout[-5000:]})
+        skipped.append("type_gates_require_selected_type_db")
     if args.run and all(stage["exit_code"] == 0 for stage in stages):
         cfg_output = str(Path(config["temp_root"]) / ("config-check-" + uuid.uuid4().hex) / "config.bin")
         value = diagnostics.config_check(args.source, cfg_output, config["tools_root"], run=True)
@@ -223,7 +246,7 @@ def gate(arguments, config):
         stages.append({"stage": "build", "exit_code": code, "result": value})
     failed = any(stage["exit_code"] != 0 for stage in stages)
     return result("fail" if failed else "pass", [stage["stage"] for stage in stages],
-                  skipped=["Enforce_compiler", "runtime_behavior", "visual", "load", "type_gates_require_selected_type_db"], stages=stages)
+                  skipped=skipped, stages=stages)
 
 
 def main(argv=None):
@@ -231,7 +254,7 @@ def main(argv=None):
     if not arguments or arguments[0] in {"--help", "-h"}:
         print("Бобр DayZ Workbench 2.0\nКоманды: commands, init, route, team, task, gate, health, panel, workdrive, editor, ce-audit\n"
               "Pipeline: preflight, scaffold, lint, build, inspect-pbo, deploy\n"
-              "Диагностика: resource-audit, layout-audit, api-snapshot, api-diff, logs, release, texture, session-plan\n"
+              "Диагностика: resource-audit, layout-audit, api-snapshot, api-diff, logs, release, texture, session-plan, scenario-results\n"
               "Память: " + ", ".join(sorted(CORE_COMMANDS)) + "\nДля аргументов: COMMAND --help; /dayz-* aliases работают в этом CLI.")
         return 0
     command = arguments[0]
@@ -254,6 +277,9 @@ def main(argv=None):
         elif command in DIAGNOSTIC_COMMANDS:
             import diagnostics
             code, payload = invoke_module(diagnostics, [command, *rest])
+        elif command in SCENARIO_COMMANDS:
+            import scenarios
+            code, payload = invoke_module(scenarios, rest)
         elif command == "task":
             import orchestration
             code, payload = invoke_module(orchestration, ["--store", config["runs_root"], *rest])
