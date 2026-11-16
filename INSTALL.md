@@ -1,4 +1,4 @@
-# Установка Bobr DayZ Workbench 2.0.1
+# Установка Bobr DayZ Workbench 2.0.2
 
 ## Требования
 

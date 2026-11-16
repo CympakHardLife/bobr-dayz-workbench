@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 
 
 AGENT = Path(__file__).resolve().parents[2]
-VERSION = "2.0.1"
+VERSION = "2.0.2"
 MAX_TEXT = 8 * 1024 * 1024
 PRIVATE_PARTS = {"secrets", "keys", ".git", ".ssh", "storage_1", "players.db"}
 

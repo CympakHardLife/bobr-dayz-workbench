@@ -21,7 +21,7 @@ import time
 import uuid
 
 
-VERSION = "2.0.1"
+VERSION = "2.0.2"
 AGENT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_TOOLS = None
 WRITE_ROOT_KEYS = ("workspace_root", "test_workspace", "runs_root", "reports_root", "builds_root", "temp_root")

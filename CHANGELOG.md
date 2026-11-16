@@ -1,5 +1,23 @@
 # Изменения
 
+## 2.0.2 — 2026-11-16
+
+- Исправлена подтверждённая ошибка удалённого CI: `runner` недоступен в
+  `jobs.<job_id>.env`, поэтому прежний workflow отклонялся до запуска jobs.
+  Корень тестов теперь задаётся из `$env:RUNNER_TEMP` внутри PowerShell-шага;
+  там же создаётся каталог и выполняется suite. Ограничения сверены по
+  [официальной таблице contexts](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability)
+  и [описанию RUNNER_TEMP](https://docs.github.com/en/actions/reference/workflows-and-actions/variables).
+- Push-запуск ограничен веткой `main`; push тега больше не дублирует его.
+  `pull_request` и `workflow_dispatch` сохранены согласно
+  [правилам branch/tag filters](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushbranchestagsbranches-ignoretags-ignore).
+- Версии `actions/checkout@v7` и `actions/setup-python@v7` сверены по их
+  официальным [README checkout](https://github.com/actions/checkout) и
+  [README setup-python](https://github.com/actions/setup-python).
+- Изменены workflow, документация и метаданные выпуска; поведение инструментов
+  не меняется. Актуальные локальные проверки отражены в `workbench/VALIDATION.json`.
+  Удалённый CI подтверждается отдельным receipt после фактического завершения.
+
 ## 2.0.1 — 2026-11-16
 
 ### Переносимость

@@ -1,15 +1,16 @@
 {
     "schema_version": 1,
-    "version": "2.0.1",
+    "version": "2.0.2",
     "scope": "portable_release_local_checks",
-    "status": "passed",
+    "status": "passed_local_checks",
     "provenance": {
-        "basis": "Final owning-test and clean-transfer results reported by the release exporter after the memory-template and source-directory guard revision",
+        "basis": "Fresh version 2.0.2 owning-test and clean-transfer results reported by the release exporter; workflow independently checked by actionlint",
         "contains_machine_paths": false,
         "contains_private_runtime_configuration": false
     },
     "owning_tests": {
         "status": "passed",
+        "fresh_run_for_this_version": true,
         "workbench_passed": 131,
         "core_passed": 46,
         "memory_passed": 20,
@@ -17,6 +18,7 @@
     },
     "transfer_checks": {
         "status": "passed",
+        "fresh_run_for_this_version": true,
         "total_passed": 10,
         "checks": [
             {
@@ -97,9 +99,22 @@
         "game_or_server_bundled": false,
         "configure_downloads": false
     },
+    "workflow_static_validation": {
+        "status": "passed",
+        "tool": "actionlint",
+        "tool_version": "1.7.12",
+        "workflow_sha256": "372139f4d9a885a90ed1ebdc4780f9cac237d52aaeb3b9ed5d248d7328b6756b",
+        "invalid_job_env_runner_regression": "rejected_as_expected",
+        "shellcheck": "disabled",
+        "pyflakes": "disabled"
+    },
     "github_ci": {
-        "status": "not_run",
-        "reason": "Workflow configuration is supplied; hosted GitHub CI is not part of this completed local validation"
+        "status": "not_run_at_packaging",
+        "reason": "The current hosted workflow is checked after push; its later receipt is kept outside this fixed source artifact",
+        "previous_attempt": {
+            "status": "failed_before_jobs",
+            "reason": "Unrecognized named-value runner in jobs.test.env"
+        }
     },
     "limitations": [
         "Local Python tests and pack-only readback do not prove Enforce compilation or game behavior",
