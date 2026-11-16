@@ -1,0 +1,6 @@
+interface:
+  display_name: "Коллизии и пространственные проверки"
+  short_description: "Коллизии и пространственные проверки для модов DayZ"
+  default_prompt: "Используй $dayz-physics для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

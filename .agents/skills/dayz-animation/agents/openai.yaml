@@ -1,0 +1,6 @@
+interface:
+  display_name: "Анимации и действия"
+  short_description: "Анимации и действия для модов DayZ"
+  default_prompt: "Используй $dayz-animation для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

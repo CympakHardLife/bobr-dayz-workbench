@@ -1,0 +1,16 @@
+﻿{
+  "restock_values": [
+    600,
+    900,
+    1800,
+    3600,
+    7200,
+    14400
+  ],
+  "compact_nonpositive": false,
+  "stash_prefixes": [],
+  "forbidden_spawn_classes": [],
+  "max_variants": 10,
+  "max_chance_decimals": 2,
+  "json_files": []
+}

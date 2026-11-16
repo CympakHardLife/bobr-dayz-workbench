@@ -1,0 +1,6 @@
+interface:
+  display_name: "Enforce, RPC и сохранение"
+  short_description: "Enforce, RPC и сохранение для модов DayZ"
+  default_prompt: "Используй $dayz-script для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

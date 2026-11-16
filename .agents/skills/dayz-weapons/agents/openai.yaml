@@ -1,0 +1,6 @@
+interface:
+  display_name: "Оружие и боеприпасы"
+  short_description: "Оружие и боеприпасы для модов DayZ"
+  default_prompt: "Используй $dayz-weapons для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

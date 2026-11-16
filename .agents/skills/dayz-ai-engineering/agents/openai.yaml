@@ -1,0 +1,6 @@
+interface:
+  display_name: "DayZ — собственный AI"
+  short_description: "AI DayZ: скрипты, навигация, восприятие и сборка"
+  default_prompt: "Используй $dayz-ai-engineering для разработки и проверки собственного AI DayZ по актуальным исходникам."
+policy:
+  allow_implicit_invocation: true

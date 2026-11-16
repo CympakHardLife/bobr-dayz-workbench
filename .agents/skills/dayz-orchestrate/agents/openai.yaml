@@ -1,0 +1,6 @@
+interface:
+  display_name: "Команда разработки"
+  short_description: "Команда разработки для модов DayZ"
+  default_prompt: "Используй $dayz-orchestrate для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

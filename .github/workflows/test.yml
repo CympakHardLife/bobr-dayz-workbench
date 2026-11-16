@@ -1,0 +1,42 @@
+name: Python tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: python-tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Windows / Python ${{ matrix.python-version }}
+    runs-on: windows-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUTF8: "1"
+      BOBR_TEST_ROOT: ${{ runner.temp }}/bobr-dayz-tests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+      - name: Prepare isolated test root
+        shell: pwsh
+        run: New-Item -ItemType Directory -Force -Path $env:BOBR_TEST_ROOT | Out-Null
+      - name: Run stdlib tests
+        run: python -B -X utf8 -m unittest discover -s tests -v

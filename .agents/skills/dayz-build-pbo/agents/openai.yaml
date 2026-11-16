@@ -1,0 +1,6 @@
+interface:
+  display_name: "Сборка и проверка PBO"
+  short_description: "Сборка и проверка PBO для модов DayZ"
+  default_prompt: "Используй $dayz-build-pbo для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

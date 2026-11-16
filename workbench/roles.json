@@ -1,0 +1,306 @@
+{
+  "schema_version": 2,
+  "roles": [
+    {
+      "name": "dayz-economy",
+      "description": "Проверяет CE XML и бюджет выбранной миссии",
+      "profile": ".codex/agents/dayz-economy.toml",
+      "skills": [
+        "dayz-economy-check",
+        "dayz-config"
+      ],
+      "domains": [
+        "economy",
+        "ce",
+        "mission-data"
+      ]
+    },
+    {
+      "name": "dayz-researcher",
+      "description": "Исследует owning API и знания с проверяемым provenance",
+      "profile": ".codex/agents/dayz-researcher.toml",
+      "skills": [
+        "dayz-research",
+        "dayz-modding-core"
+      ],
+      "domains": [
+        "research",
+        "sources",
+        "knowledge"
+      ]
+    },
+    {
+      "name": "dayz-orchestrator",
+      "description": "Ведёт план разработки до проверенного артефакта",
+      "profile": ".codex/agents/dayz-orchestrator.toml",
+      "skills": [
+        "dayz-orchestrate",
+        "dayz-route"
+      ],
+      "domains": [
+        "coordination",
+        "planning"
+      ]
+    },
+    {
+      "name": "dayz-architect",
+      "description": "Проектирует классы, стороны и зависимости мода",
+      "profile": ".codex/agents/dayz-architect.toml",
+      "skills": [
+        "dayz-new-mod",
+        "dayz-script",
+        "dayz-config"
+      ],
+      "domains": [
+        "architecture",
+        "new-mod"
+      ]
+    },
+    {
+      "name": "dayz-script",
+      "description": "Реализует Enforce, RPC и actions",
+      "profile": ".codex/agents/dayz-script.toml",
+      "skills": [
+        "dayz-script"
+      ],
+      "domains": [
+        "script",
+        "rpc",
+        "actions"
+      ]
+    },
+    {
+      "name": "dayz-config",
+      "description": "Реализует конфиги и provider/resource зависимости",
+      "profile": ".codex/agents/dayz-config.toml",
+      "skills": [
+        "dayz-config",
+        "dayz-mod-compatibility"
+      ],
+      "domains": [
+        "config",
+        "dependencies"
+      ]
+    },
+    {
+      "name": "dayz-assets",
+      "description": "Готовит P3D/PAA/RVMAT и ресурсы",
+      "profile": ".codex/agents/dayz-assets.toml",
+      "skills": [
+        "dayz-assets"
+      ],
+      "domains": [
+        "assets",
+        "models",
+        "textures"
+      ]
+    },
+    {
+      "name": "dayz-ui",
+      "description": "Реализует layout, HUD, меню и сетевые состояния",
+      "profile": ".codex/agents/dayz-ui.toml",
+      "skills": [
+        "dayz-ui",
+        "dayz-script"
+      ],
+      "domains": [
+        "ui",
+        "layout",
+        "hud"
+      ]
+    },
+    {
+      "name": "dayz-audio",
+      "description": "Реализует positional audio и озвучку",
+      "profile": ".codex/agents/dayz-audio.toml",
+      "skills": [
+        "dayz-audio"
+      ],
+      "domains": [
+        "audio",
+        "voice",
+        "fx"
+      ]
+    },
+    {
+      "name": "dayz-ai",
+      "description": "Разрабатывает восприятие, поиск, бой и движение NPC",
+      "profile": ".codex/agents/dayz-ai.toml",
+      "skills": [
+        "dayz-ai-engineering",
+        "dayz-physics"
+      ],
+      "domains": [
+        "ai",
+        "bots",
+        "perception",
+        "navigation"
+      ]
+    },
+    {
+      "name": "dayz-persistence",
+      "description": "Проектирует устойчивые данные и миграции",
+      "profile": ".codex/agents/dayz-persistence.toml",
+      "skills": [
+        "dayz-script"
+      ],
+      "domains": [
+        "persistence",
+        "storage",
+        "migration"
+      ]
+    },
+    {
+      "name": "dayz-vehicle",
+      "description": "Разрабатывает транспорт и crew/seat контракты",
+      "profile": ".codex/agents/dayz-vehicle.toml",
+      "skills": [
+        "dayz-vehicles",
+        "dayz-physics"
+      ],
+      "domains": [
+        "vehicle",
+        "transport",
+        "crew"
+      ]
+    },
+    {
+      "name": "dayz-weapon",
+      "description": "Разрабатывает оружие, ammo и modes",
+      "profile": ".codex/agents/dayz-weapon.toml",
+      "skills": [
+        "dayz-weapons",
+        "dayz-config"
+      ],
+      "domains": [
+        "weapon",
+        "ammo",
+        "ballistics"
+      ]
+    },
+    {
+      "name": "dayz-wearables",
+      "description": "Разрабатывает одежду, слоты и варианты",
+      "profile": ".codex/agents/dayz-wearables.toml",
+      "skills": [
+        "dayz-wearables",
+        "dayz-assets"
+      ],
+      "domains": [
+        "wearables",
+        "clothing",
+        "armor"
+      ]
+    },
+    {
+      "name": "dayz-animation",
+      "description": "Связывает animations, model.cfg и actions",
+      "profile": ".codex/agents/dayz-animation.toml",
+      "skills": [
+        "dayz-animation",
+        "dayz-script"
+      ],
+      "domains": [
+        "animation",
+        "actions",
+        "model-cfg"
+      ]
+    },
+    {
+      "name": "dayz-physics",
+      "description": "Исследует collision, raycast и clearance",
+      "profile": ".codex/agents/dayz-physics.toml",
+      "skills": [
+        "dayz-physics"
+      ],
+      "domains": [
+        "physics",
+        "collision",
+        "raycast"
+      ]
+    },
+    {
+      "name": "dayz-map",
+      "description": "Разрабатывает композиции и размещение",
+      "profile": ".codex/agents/dayz-map.toml",
+      "skills": [
+        "dayz-map"
+      ],
+      "domains": [
+        "map",
+        "terrain",
+        "placement"
+      ]
+    },
+    {
+      "name": "dayz-workbench",
+      "description": "Разрабатывает editor tools и настройки DayZ Tools",
+      "profile": ".codex/agents/dayz-workbench.toml",
+      "skills": [
+        "dayz-workbench",
+        "dayz-init"
+      ],
+      "domains": [
+        "editor",
+        "workbench",
+        "tools"
+      ]
+    },
+    {
+      "name": "dayz-debugger",
+      "description": "Разбирает RPT, ошибки и регрессии",
+      "profile": ".codex/agents/dayz-debugger.toml",
+      "skills": [
+        "dayz-log-review",
+        "dayz-gate"
+      ],
+      "domains": [
+        "debug",
+        "logs",
+        "crash"
+      ]
+    },
+    {
+      "name": "dayz-reviewer",
+      "description": "Независимое read-only ревью кода и evidence",
+      "profile": ".codex/agents/dayz-reviewer.toml",
+      "skills": [
+        "dayz-code-review",
+        "dayz-mod-compatibility"
+      ],
+      "domains": [
+        "review",
+        "quality",
+        "compatibility"
+      ]
+    },
+    {
+      "name": "dayz-build",
+      "description": "Собирает PBO и отделяет упаковку от установки",
+      "profile": ".codex/agents/dayz-build.toml",
+      "skills": [
+        "dayz-build-pbo",
+        "dayz-gate"
+      ],
+      "domains": [
+        "build",
+        "pbo",
+        "deploy"
+      ]
+    },
+    {
+      "name": "dayz-release",
+      "description": "Готовит переносимый релиз и документацию",
+      "profile": ".codex/agents/dayz-release.toml",
+      "skills": [
+        "dayz-release",
+        "dayz-economy-check"
+      ],
+      "domains": [
+        "release",
+        "docs",
+        "packaging"
+      ]
+    }
+  ]
+}

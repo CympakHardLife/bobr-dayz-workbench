@@ -1,0 +1,109 @@
+{
+    "schema_version": 1,
+    "version": "2.0.1",
+    "scope": "portable_release_local_checks",
+    "status": "passed",
+    "provenance": {
+        "basis": "Final owning-test and clean-transfer results reported by the release exporter after the memory-template and source-directory guard revision",
+        "contains_machine_paths": false,
+        "contains_private_runtime_configuration": false
+    },
+    "owning_tests": {
+        "status": "passed",
+        "workbench_passed": 131,
+        "core_passed": 46,
+        "memory_passed": 20,
+        "total_passed": 197
+    },
+    "transfer_checks": {
+        "status": "passed",
+        "total_passed": 10,
+        "checks": [
+            {
+                "id": "source_hashes",
+                "status": "passed",
+                "result": "Exported source files match the source manifest at validation"
+            },
+            {
+                "id": "neutral_inventory",
+                "status": "passed",
+                "result": "Clean inventory excludes personal configuration, private data, external binaries and corpora"
+            },
+            {
+                "id": "internal_links",
+                "status": "passed",
+                "result": "Required local links and profile references resolve"
+            },
+            {
+                "id": "fresh_bootstrap",
+                "status": "passed",
+                "result": "Fresh configure, doctor, health and memory verification complete"
+            },
+            {
+                "id": "model_disabled_by_default",
+                "status": "passed",
+                "result": "Fresh setup operates without a model or model download"
+            },
+            {
+                "id": "pack_only_workflow",
+                "status": "passed",
+                "result": "Isolated scaffold, lint, builtin PBO, readback and release checks complete"
+            },
+            {
+                "id": "task_lifecycle",
+                "status": "passed",
+                "result": "Portable task lifecycle completes with saved workflow state"
+            },
+            {
+                "id": "wrong_sha_rejected_before_writes",
+                "status": "passed",
+                "result": "A mismatching supplied hash is rejected before configuration output writes"
+            },
+            {
+                "id": "memory_preserved",
+                "status": "passed",
+                "result": "Ordinary reconfiguration preserves existing user memory"
+            },
+            {
+                "id": "source_directory_cannot_become_runtime_data",
+                "status": "passed",
+                "result": "configure --data-root targeting the repository tools directory returns 2 before core config writes or .local creation"
+            }
+        ]
+    },
+    "release_inventory": {
+        "skills": 27,
+        "specialist_profiles": 22,
+        "cli_commands": 37,
+        "memory_templates": "versioned_under_templates/memory",
+        "mutable_memory": "generated_locally_and_excluded_from_git"
+    },
+    "build_classification": {
+        "backend": "builtin",
+        "mode": "pack_only",
+        "pbo_compression": "none",
+        "config_cpp": "kept_as_text",
+        "Enforce": "not_run",
+        "Binarize": "not_run",
+        "game": "not_run",
+        "server": "not_run",
+        "runtime_compatibility": "not_claimed"
+    },
+    "external_dependencies": {
+        "model_bundled": false,
+        "model_runtime_bundled": false,
+        "knowledge_corpus_bundled": false,
+        "dayz_tools_bundled": false,
+        "game_or_server_bundled": false,
+        "configure_downloads": false
+    },
+    "github_ci": {
+        "status": "not_run",
+        "reason": "Workflow configuration is supplied; hosted GitHub CI is not part of this completed local validation"
+    },
+    "limitations": [
+        "Local Python tests and pack-only readback do not prove Enforce compilation or game behavior",
+        "Native tool behavior, client/server compatibility and performance require separate checks",
+        "External model and corpus availability must be configured and verified by the owner"
+    ]
+}

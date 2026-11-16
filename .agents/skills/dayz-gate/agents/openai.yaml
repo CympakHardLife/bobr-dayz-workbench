@@ -1,0 +1,6 @@
+interface:
+  display_name: "Проверки результата"
+  short_description: "Проверки результата для модов DayZ"
+  default_prompt: "Используй $dayz-gate для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

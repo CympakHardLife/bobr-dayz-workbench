@@ -1,0 +1,6 @@
+interface:
+  display_name: "Звук и озвучка"
+  short_description: "Звук и озвучка для модов DayZ"
+  default_prompt: "Используй $dayz-audio для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

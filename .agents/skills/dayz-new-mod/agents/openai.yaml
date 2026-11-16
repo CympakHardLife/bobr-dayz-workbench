@@ -1,0 +1,6 @@
+interface:
+  display_name: "Создание собственного мода"
+  short_description: "Создание собственного мода для модов DayZ"
+  default_prompt: "Используй $dayz-new-mod для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

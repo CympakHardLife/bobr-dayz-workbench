@@ -1,0 +1,6 @@
+interface:
+  display_name: "Передача и выпуск"
+  short_description: "Передача и выпуск для модов DayZ"
+  default_prompt: "Используй $dayz-release для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

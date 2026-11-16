@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "topics": {
+    "profile": {
+      "description": "Предпочтения владельца",
+      "summary": "memory/PROFILE.md",
+      "sources": [
+        ".ai-rules.md",
+        "education/code_style.md"
+      ]
+    },
+    "memory": {
+      "description": "Память и checkpoints",
+      "summary": "MEMORY_GUIDE.md",
+      "sources": [
+        "core/MEMORY_ARCHITECTURE.md"
+      ]
+    },
+    "safety": {
+      "description": "Область задачи и пути",
+      "summary": "AGENTS.md",
+      "sources": [
+        "PROJECT_PATHS.md"
+      ]
+    },
+    "architecture": {
+      "description": "Архитектура и зависимости",
+      "summary": "memory/cards/dayzmods-architecture.md",
+      "sources": [
+        "docs/ENGINEERING.md"
+      ]
+    },
+    "gameplay": {
+      "description": "Скриптовые механики и lifecycle",
+      "summary": "memory/cards/dayzmods-gameplay.md",
+      "sources": [
+        ".agents/skills/dayz-script/SKILL.md"
+      ]
+    },
+    "config": {
+      "description": "Конфиги, провайдеры и ресурсы",
+      "summary": "memory/cards/dayzmods-config.md",
+      "sources": [
+        ".agents/skills/dayz-config/SKILL.md"
+      ]
+    },
+    "compatibility": {
+      "description": "Совместимость и фактическая загрузка",
+      "summary": "memory/cards/dayzmods-compatibility.md",
+      "sources": [
+        ".agents/skills/dayz-mod-compatibility/SKILL.md"
+      ]
+    },
+    "build": {
+      "description": "Упаковка и проверка",
+      "summary": "memory/cards/dayzmods-build.md",
+      "sources": [
+        ".agents/skills/dayz-build-pbo/SKILL.md"
+      ]
+    },
+    "ai-engineering": {
+      "description": "Восприятие, память, движение и действия NPC",
+      "summary": "memory/cards/dayzmods-ai-engineering.md",
+      "sources": [
+        ".agents/skills/dayz-ai-engineering/SKILL.md"
+      ]
+    },
+    "engine-coding": {
+      "description": "DayZ, Reforger и RV3: раздельные контексты",
+      "summary": "memory/cards/dayzmods-engine-coding.md",
+      "sources": [
+        "docs/KNOWLEDGE.md"
+      ]
+    },
+    "core": {
+      "description": "Память и проверяемый поиск",
+      "summary": "memory/cards/dayzmods-core.md",
+      "sources": [
+        "core/MEMORY_ARCHITECTURE.md"
+      ]
+    },
+    "workbench": {
+      "description": "Задания, роли и воспроизводимые результаты",
+      "summary": "memory/cards/dayzmods-workbench.md",
+      "sources": [
+        "workbench/START_HERE.md"
+      ]
+    }
+  }
+}

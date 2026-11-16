@@ -1,0 +1,6 @@
+interface:
+  display_name: "Выбор навыка и специалиста"
+  short_description: "Выбор навыка и специалиста для модов DayZ"
+  default_prompt: "Используй $dayz-route для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

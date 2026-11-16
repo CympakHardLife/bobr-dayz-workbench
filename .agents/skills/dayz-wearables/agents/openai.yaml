@@ -1,0 +1,6 @@
+interface:
+  display_name: "Одежда и экипировка"
+  short_description: "Одежда и экипировка для модов DayZ"
+  default_prompt: "Используй $dayz-wearables для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

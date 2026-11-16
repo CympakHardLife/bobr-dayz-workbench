@@ -1,0 +1,6 @@
+interface:
+  display_name: "Проверка изменения API"
+  short_description: "Проверка изменения API для модов DayZ"
+  default_prompt: "Используй $dayz-upgrade-guard для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

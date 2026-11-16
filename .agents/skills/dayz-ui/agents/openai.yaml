@@ -1,0 +1,6 @@
+interface:
+  display_name: "Интерфейс и меню"
+  short_description: "Интерфейс и меню для модов DayZ"
+  default_prompt: "Используй $dayz-ui для моей задачи DayZ; покажи результат и проверки."
+policy:
+  allow_implicit_invocation: true

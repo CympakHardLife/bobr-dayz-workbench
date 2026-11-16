@@ -1,0 +1,686 @@
+{
+  "schema_version": 2,
+  "commands": [
+    {
+      "name": "init",
+      "module": "cli",
+      "skill": "dayz-init",
+      "description": "Статус рабочего профиля и подготовка входа",
+      "mutates": false,
+      "aliases": [
+        "dayz-init"
+      ]
+    },
+    {
+      "name": "gate",
+      "module": "cli",
+      "skill": "dayz-gate",
+      "description": "Согласованные ступени проверки изменения",
+      "mutates": true,
+      "aliases": [
+        "dayz-gate"
+      ]
+    },
+    {
+      "name": "research",
+      "module": "research",
+      "skill": "dayz-research",
+      "description": "Исследование с verified retrieval и provenance",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "commands",
+      "module": "cli",
+      "skill": "dayz-route",
+      "description": "Каталог команд и навыков",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "route",
+      "module": "cli",
+      "skill": "dayz-route",
+      "description": "Выбор роли и навыков по задаче",
+      "mutates": false,
+      "aliases": [
+        "dayz-route"
+      ]
+    },
+    {
+      "name": "team",
+      "module": "cli",
+      "skill": "dayz-orchestrate",
+      "description": "Профили специалистов",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "task",
+      "module": "orchestration",
+      "skill": "dayz-orchestrate",
+      "description": "План, задания, evidence и review",
+      "mutates": true,
+      "aliases": []
+    },
+    {
+      "name": "preflight",
+      "module": "pipeline",
+      "skill": "dayz-init",
+      "description": "Готовность путей и инструментов",
+      "mutates": false,
+      "aliases": [
+        "dayz-preflight"
+      ]
+    },
+    {
+      "name": "workdrive",
+      "module": "cli",
+      "skill": "dayz-init",
+      "description": "Статус/план WorkDrive без mount поверх диска",
+      "mutates": false,
+      "aliases": [
+        "dayz-workdrive"
+      ]
+    },
+    {
+      "name": "scaffold",
+      "module": "pipeline",
+      "skill": "dayz-new-mod",
+      "description": "Новый каркас мода",
+      "mutates": true,
+      "aliases": [
+        "dayz-new-mod"
+      ]
+    },
+    {
+      "name": "lint",
+      "module": "pipeline",
+      "skill": "dayz-config",
+      "description": "Структура config, prefix и ссылки",
+      "mutates": false,
+      "aliases": [
+        "dayz-lint"
+      ]
+    },
+    {
+      "name": "build",
+      "module": "pipeline",
+      "skill": "dayz-build-pbo",
+      "description": "План или упаковка PBO",
+      "mutates": true,
+      "aliases": [
+        "dayz-build-pbo"
+      ]
+    },
+    {
+      "name": "inspect-pbo",
+      "module": "pipeline",
+      "skill": "dayz-build-pbo",
+      "description": "Заголовки, entries и prefix PBO",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "deploy",
+      "module": "pipeline",
+      "skill": "dayz-build-pbo",
+      "description": "Точный PBO deployment с SHA",
+      "mutates": true,
+      "aliases": [
+        "dayz-deploy-pbo"
+      ]
+    },
+    {
+      "name": "logs",
+      "module": "diagnostics",
+      "skill": "dayz-log-review",
+      "description": "Адресный анализ выбранного лога",
+      "mutates": false,
+      "aliases": [
+        "dayz-logwatch"
+      ]
+    },
+    {
+      "name": "health",
+      "module": "cli",
+      "skill": "dayz-gate",
+      "description": "Состояние проекта и проверок",
+      "mutates": false,
+      "aliases": [
+        "dayz-health"
+      ]
+    },
+    {
+      "name": "release",
+      "module": "diagnostics",
+      "skill": "dayz-release",
+      "description": "Переносимый архив проекта",
+      "mutates": true,
+      "aliases": [
+        "dayz-release-pack",
+        "dayz-server-kit"
+      ]
+    },
+    {
+      "name": "api-snapshot",
+      "module": "diagnostics",
+      "skill": "dayz-upgrade-guard",
+      "description": "Снимок объявлений из исходников",
+      "mutates": true,
+      "aliases": []
+    },
+    {
+      "name": "api-diff",
+      "module": "diagnostics",
+      "skill": "dayz-upgrade-guard",
+      "description": "Сравнение snapshots API",
+      "mutates": false,
+      "aliases": [
+        "dayz-upgrade-guard"
+      ]
+    },
+    {
+      "name": "resource-audit",
+      "module": "diagnostics",
+      "skill": "dayz-assets",
+      "description": "Доступные статические проверки ресурсов",
+      "mutates": false,
+      "aliases": [
+        "dayz-p3d-audit"
+      ]
+    },
+    {
+      "name": "layout-audit",
+      "module": "diagnostics",
+      "skill": "dayz-ui",
+      "description": "Статические проверки layout",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "ce-audit",
+      "module": "cli",
+      "skill": "dayz-economy-check",
+      "description": "Согласованность выбранных CE XML",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "texture",
+      "module": "diagnostics",
+      "skill": "dayz-assets",
+      "description": "План/конвертация текстуры",
+      "mutates": true,
+      "aliases": [
+        "dayz-pack-texture"
+      ]
+    },
+    {
+      "name": "editor",
+      "module": "cli",
+      "skill": "dayz-workbench",
+      "description": "План/открытие выбранного редактора",
+      "mutates": true,
+      "aliases": []
+    },
+    {
+      "name": "session-plan",
+      "module": "diagnostics",
+      "skill": "dayz-gate",
+      "description": "Подготовка наблюдаемого игрового сценария",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "panel",
+      "module": "cli",
+      "skill": "dayz-init",
+      "description": "Локальный отчёт без службы",
+      "mutates": true,
+      "aliases": [
+        "dayz-panel"
+      ]
+    },
+    {
+      "name": "doctor",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Готовность памяти и поиска",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "backends",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Фактический статус memory backends",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "search",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Поиск по выбранному source scope",
+      "mutates": false,
+      "aliases": [
+        "dayz-ask"
+      ]
+    },
+    {
+      "name": "context",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Ограниченный тематический контекст",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "recall",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Чтение структурированного опыта",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "remember",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Запись опыта с источником",
+      "mutates": true,
+      "aliases": [
+        "dayz-record-correction"
+      ]
+    },
+    {
+      "name": "cache",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Состояние/очистка производного кеша",
+      "mutates": true,
+      "aliases": []
+    },
+    {
+      "name": "verify",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Целостность ядра и памяти",
+      "mutates": false,
+      "aliases": []
+    },
+    {
+      "name": "snapshot",
+      "module": "core",
+      "skill": "dayz-modding-core",
+      "description": "Ручной снимок профиля",
+      "mutates": true,
+      "aliases": []
+    },
+    {
+      "name": "check",
+      "module": "core",
+      "skill": "dayz-gate",
+      "description": "Собственные static Enforce checks",
+      "mutates": true,
+      "aliases": []
+    },
+    {
+      "name": "config-check",
+      "module": "diagnostics",
+      "skill": "dayz-config",
+      "description": "План/проверка config.cpp штатным CfgConvert",
+      "mutates": true,
+      "aliases": []
+    }
+  ],
+  "routing": [
+    {
+      "role": "dayz-economy",
+      "skills": [
+        "dayz-economy-check",
+        "dayz-config"
+      ],
+      "keywords": [
+        "types.xml",
+        "spawnabletypes",
+        "randompresets",
+        "экономик",
+        "лут",
+        "nominal",
+        "cfgeconomycore",
+        "экономика ce"
+      ]
+    },
+    {
+      "role": "dayz-researcher",
+      "skills": [
+        "dayz-research",
+        "dayz-modding-core"
+      ],
+      "keywords": [
+        "исследуй",
+        "исследование",
+        "найди",
+        "интернет",
+        "документац",
+        "источник",
+        "api",
+        "research",
+        "знания"
+      ]
+    },
+    {
+      "role": "dayz-orchestrator",
+      "skills": [
+        "dayz-orchestrate",
+        "dayz-route"
+      ],
+      "keywords": [
+        "полный мод",
+        "новый мод",
+        "система",
+        "оркестр",
+        "команда",
+        "план разработки"
+      ]
+    },
+    {
+      "role": "dayz-architect",
+      "skills": [
+        "dayz-new-mod",
+        "dayz-script",
+        "dayz-config"
+      ],
+      "keywords": [
+        "архитектур",
+        "спроект",
+        "каркас",
+        "scaffold",
+        "структура мода"
+      ]
+    },
+    {
+      "role": "dayz-script",
+      "skills": [
+        "dayz-script"
+      ],
+      "keywords": [
+        "enforce",
+        "скрипт",
+        "rpc",
+        "репликац",
+        "callback",
+        "calllater",
+        "action"
+      ]
+    },
+    {
+      "role": "dayz-config",
+      "skills": [
+        "dayz-config",
+        "dayz-mod-compatibility"
+      ],
+      "keywords": [
+        "config.cpp",
+        "cfgpatches",
+        "cfgmods",
+        "requiredaddons",
+        "наследован",
+        "конфиг",
+        "provider"
+      ]
+    },
+    {
+      "role": "dayz-assets",
+      "skills": [
+        "dayz-assets"
+      ],
+      "keywords": [
+        "текстур",
+        "материал",
+        "p3d",
+        "paa",
+        "rvmat",
+        "модел",
+        "lod"
+      ]
+    },
+    {
+      "role": "dayz-ui",
+      "skills": [
+        "dayz-ui",
+        "dayz-script"
+      ],
+      "keywords": [
+        "интерфейс",
+        "админк",
+        "панель",
+        "меню",
+        "hud",
+        "layout",
+        "виджет",
+        "gui"
+      ]
+    },
+    {
+      "role": "dayz-audio",
+      "skills": [
+        "dayz-audio"
+      ],
+      "keywords": [
+        "звук",
+        "голос",
+        "озвуч",
+        "ogg",
+        "soundset",
+        "реплик",
+        "audio"
+      ]
+    },
+    {
+      "role": "dayz-ai",
+      "skills": [
+        "dayz-ai-engineering",
+        "dayz-physics"
+      ],
+      "keywords": [
+        "бот",
+        "npc",
+        "infected",
+        "заражён",
+        "агро",
+        "слух",
+        "восприят",
+        "навигац",
+        "поиск цели",
+        "патрул",
+        "босс",
+        "гарнизон"
+      ]
+    },
+    {
+      "role": "dayz-persistence",
+      "skills": [
+        "dayz-script"
+      ],
+      "keywords": [
+        "сохранени",
+        "persistence",
+        "onstore",
+        "миграц",
+        "после рестарта",
+        "устойчивые данные"
+      ]
+    },
+    {
+      "role": "dayz-vehicle",
+      "skills": [
+        "dayz-vehicles",
+        "dayz-physics"
+      ],
+      "keywords": [
+        "машин",
+        "автомоб",
+        "транспорт",
+        "vehicle",
+        "двигател",
+        "колёс",
+        "посадк",
+        "seat"
+      ]
+    },
+    {
+      "role": "dayz-weapon",
+      "skills": [
+        "dayz-weapons",
+        "dayz-config"
+      ],
+      "keywords": [
+        "оруж",
+        "патрон",
+        "магазин",
+        "отдач",
+        "баллист",
+        "weapon",
+        "ammo"
+      ]
+    },
+    {
+      "role": "dayz-wearables",
+      "skills": [
+        "dayz-wearables",
+        "dayz-assets"
+      ],
+      "keywords": [
+        "одежд",
+        "брон",
+        "жилет",
+        "куртк",
+        "wearable",
+        "инвентарный слот"
+      ]
+    },
+    {
+      "role": "dayz-animation",
+      "skills": [
+        "dayz-animation",
+        "dayz-script"
+      ],
+      "keywords": [
+        "анимац",
+        "model.cfg",
+        "rtm",
+        "бинт",
+        "жест"
+      ]
+    },
+    {
+      "role": "dayz-physics",
+      "skills": [
+        "dayz-physics"
+      ],
+      "keywords": [
+        "коллизи",
+        "физик",
+        "raycast",
+        "луч",
+        "clearance",
+        "узкий проход"
+      ]
+    },
+    {
+      "role": "dayz-map",
+      "skills": [
+        "dayz-map"
+      ],
+      "keywords": [
+        "карта",
+        "terrain",
+        "координат",
+        "размещен",
+        "композиц",
+        "лагерь",
+        "объекты мира"
+      ]
+    },
+    {
+      "role": "dayz-workbench",
+      "skills": [
+        "dayz-workbench",
+        "dayz-init"
+      ],
+      "keywords": [
+        "workbench",
+        "object builder",
+        "редактор",
+        "dayz tools",
+        "инструмент"
+      ]
+    },
+    {
+      "role": "dayz-debugger",
+      "skills": [
+        "dayz-log-review",
+        "dayz-gate"
+      ],
+      "keywords": [
+        "ошибка",
+        "краш",
+        "не работает",
+        "rpt",
+        "логи",
+        "exception",
+        "cannot",
+        "зависает"
+      ]
+    },
+    {
+      "role": "dayz-reviewer",
+      "skills": [
+        "dayz-code-review",
+        "dayz-mod-compatibility"
+      ],
+      "keywords": [
+        "ревью",
+        "review",
+        "проверь код",
+        "аудит кода",
+        "совместим",
+        "конфликт"
+      ]
+    },
+    {
+      "role": "dayz-build",
+      "skills": [
+        "dayz-build-pbo",
+        "dayz-gate"
+      ],
+      "keywords": [
+        "сборк",
+        "собери",
+        "упаков",
+        "pbo",
+        "addonbuilder",
+        "deploy",
+        "установи мод"
+      ]
+    },
+    {
+      "role": "dayz-release",
+      "skills": [
+        "dayz-release",
+        "dayz-economy-check"
+      ],
+      "keywords": [
+        "релиз",
+        "release",
+        "архив",
+        "readme",
+        "серверный комплект",
+        "changelog"
+      ]
+    }
+  ]
+}
