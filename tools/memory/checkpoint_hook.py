@@ -15,7 +15,7 @@ import uuid
 from pathlib import Path
 
 
-FILES = ('AGENTS.md', '.ai-rules.md', 'memory/CURRENT.md', 'memory/PROFILE.md', 'memory/INDEX.md', 'memory/experience.json', 'tools/memory/routes.json', 'core/config.json', 'workbench/config.json', 'workbench/research_config.json', 'workbench/catalog.json', 'workbench/roles.json', 'workbench/START_HERE.md', 'memory/cards/dayzmods-architecture.md', 'memory/cards/dayzmods-gameplay.md', 'memory/cards/dayzmods-config.md', 'memory/cards/dayzmods-compatibility.md', 'memory/cards/dayzmods-build.md', 'memory/cards/dayzmods-ai-engineering.md', 'memory/cards/dayzmods-engine-coding.md', 'memory/cards/dayzmods-core.md', 'memory/cards/dayzmods-workbench.md')
+FILES = ('AGENTS.md', '.ai-rules.md', 'memory/CURRENT.md', 'memory/PROFILE.md', 'memory/INDEX.md', 'memory/experience.json', 'tools/memory/routes.json', 'core/config.json', 'workbench/config.json', 'workbench/research_config.json', 'workbench/catalog.json', 'workbench/roles.json', 'workbench/START_HERE.md', 'memory/cards/dayzmods-architecture.md', 'memory/cards/dayzmods-gameplay.md', 'memory/cards/dayzmods-config.md', 'memory/cards/dayzmods-compatibility.md', 'memory/cards/dayzmods-build.md', 'memory/cards/dayzmods-ai-engineering.md', 'memory/cards/dayzmods-engine-coding.md', 'memory/cards/dayzmods-core.md', 'memory/cards/dayzmods-workbench.md', 'memory/cards/dayzmods-community-wiki.md', 'docs/WIKI_GUIDE.md')
 FORCE = {"Stop", "PreCompact", "Interrupt", "SessionEnd", "Manual"}
 EVENTS = FORCE | {"SessionStart", "PostToolUse"}
 SECRET = re.compile(

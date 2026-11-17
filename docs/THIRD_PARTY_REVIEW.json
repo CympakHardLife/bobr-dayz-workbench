@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "review_date": "2026-11-17",
-  "scope": "Seven directly supplied GitHub reference snapshots; no upstream code, corpus or model is added by this review.",
+  "scope": "Seven source snapshots audited before release;2.0.4 includes two separately scoped CC BY-SA wiki adaptations and original notice. No upstream code or corpus bundled.",
   "baseline_commit": "9a3a5eec1548edf6c583cd92f36046bb9d956a18",
   "sources": [
     {
@@ -210,7 +210,7 @@
         "README Reference Material expressly disclaims per-snippet provenance guarantee and lists external projects under own licenses. Wiki MIT is not proof of rights to copied donor snippets/assets."
       ],
       "publication_policy": "Keep source corpus/license separately identified. Independently verified facts/implementation differ from copying/translation/adaptation. Any published documentation adaptations need explicit CC BY-SA scope, not blanket proprietary restriction.",
-      "distribution_status": "reference_only_not_bundled",
+      "distribution_status": "external_corpus_with_explicit_CC_BY_SA_adaptations",
       "license_evidence": [
         {
           "relative": "LICENCE",
@@ -273,5 +273,16 @@
       "author_terms_source": "https://steamcommunity.com/sharedfiles/filedetails/?id=3031784065",
       "repack_reupload_permission": "Not granted by examined author description except its named exceptions; do not infer from use-on-server permission."
     }
-  ]
+  ],
+  "wiki_2_0_4": {
+    "adapted_documents": [
+      "docs/WIKI_GUIDE.md",
+      "memory/cards/dayzmods-community-wiki.md"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "copyright": "2026 StarDZ Team",
+    "adaptation": "Cympak2026-11-17; Russian guide, selection and API caveats",
+    "upstream_notice": "licenses/StarDZ-Wiki-LICENCE.txt",
+    "corpus_bundled": false
+  }
 }

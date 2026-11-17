@@ -14,6 +14,12 @@ This notice applies only to original materials in this project. Third-party
 materials and external products remain subject to their respective owners'
 rights and license terms. See THIRD_PARTY_NOTICES.md.
 
+Exception: docs/WIKI_GUIDE.md and memory/cards/dayzmods-community-wiki.md are
+distributed under CC BY-SA 4.0 with the attribution and modification notices
+in those files. They are not subject to the proprietary restrictions above.
+licenses/StarDZ-Wiki-LICENCE.txt preserves the upstream documentation and
+code-example notice; it does not relicense the original Workbench code.
+
 TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE MATERIALS ARE PROVIDED "AS IS",
 WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. CYMPAK SHALL NOT BE LIABLE
 FOR CLAIMS, DAMAGES, OR OTHER LIABILITY ARISING FROM THE MATERIALS OR THEIR USE.

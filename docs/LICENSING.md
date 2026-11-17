@@ -33,8 +33,7 @@
 Copyright (c) 2026 StarDZ Team. Документация — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en),
 примеры кода — MIT. Отдельные donor snippets и ассеты могут иметь иные права.
 
-Текущий публичный пакет не содержит corpus wiki или локальные wiki-derived
-справки. Следующая интеграция должна явно выбирать и документировать режим:
+Пакет2.0.4 содержит адаптированные docs/WIKI_GUIDE.md и memory/cards/dayzmods-community-wiki.md под CC BY-SA4.0 с исходным уведомлением licenses/StarDZ-Wiki-LICENCE.txt. Corpus остаётся внешним. При дальнейшем включении выбирать режим:
 
 - **Внешний corpus:** исходный текст хранится отдельно с исходной LICENCE,
   авторством, ссылкой и commit. Содержимое не включается в Git/ZIP Workbench.

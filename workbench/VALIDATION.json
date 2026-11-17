@@ -1,85 +1,98 @@
 {
-    "schema_version": 1,
-    "version": "2.0.3",
-    "scope": "portable_release_local_checks",
-    "status": "passed_local_checks",
-    "provenance": {
-        "basis": "Fresh owning suites in a clean manifest-only copy; separate clean bootstrap and transfer audit",
-        "contains_machine_paths": false,
-        "contains_private_runtime_configuration": false
-    },
-    "owning_tests": {
-        "status": "passed",
-        "fresh_run_for_this_version": true,
-        "core_passed": 46,
-        "memory_passed": 20,
-        "workbench_passed": 153,
-        "total_passed": 219,
-        "skipped": 0
-    },
-    "portable_tests": {
-        "passed": 2,
-        "skipped": 0,
-        "nested_owning_suites_not_double_counted": true
-    },
-    "transfer_checks": {
-        "status": "passed",
-        "total_passed": 10,
-        "checks": [
-            "source_manifest_sha256",
-            "neutral_memory_and_counts",
-            "local_markdown_links",
-            "source_directory_cannot_become_runtime_data",
-            "isolated_configure_doctor_health_verify",
-            "roles_and_missing_model_without_download",
-            "scaffold_lint_builtin_pbo_readback_release",
-            "task_create_resume_claim_submit_independent_review",
-            "wrong_model_sha_is_nonmutating",
-            "reconfigure_preserves_memory_and_source_allowlist"
-        ]
-    },
-    "release_inventory": {
-        "skills": 27,
-        "specialist_profiles": 22,
-        "cli_commands": 38,
-        "memory_templates": "versioned_under_templates/memory",
-        "mutable_memory": "generated_locally_and_excluded_from_git"
-    },
-    "new_regressions": [
-        "evidence drift during final source rehash is rejected",
-        "atomic file replacement with same size and mtime is rejected",
-        "contradictory, partial, duplicate, malformed gate receipts block config/build",
-        "real six-gate execution detects a type database collision",
-        "scenario lifecycle, build/side mismatch, duplicate keys and SHA drift are rejected",
-        "scenario CLI creates no history and launches no child process"
-    ],
-    "build_classification": {
-        "backend": "builtin",
-        "mode": "pack_only",
-        "config_cpp": "kept_as_text",
-        "Enforce": "outside_this_python_tool_validation",
-        "runtime_compatibility": "not_claimed"
-    },
-    "external_dependencies": {
-        "model_bundled": false,
-        "model_runtime_bundled": false,
-        "knowledge_corpus_bundled": false,
-        "dayz_tools_bundled": false,
-        "configure_downloads": false
-    },
-    "github_ci": {
-        "workflow": ".github/workflows/test.yml",
-        "matrix": [
-            "3.11",
-            "3.12",
-            "3.13"
-        ],
-        "receipt": "Hosted CI for the exact published commit is linked in its GitHub release"
-    },
-    "limitations": [
-        "Scenario validation verifies reported data and file identity, not the truth of gameplay observations",
-        "File checks detect changes during reads; they do not lock files against changes after validation returns",
-        "Python and pack-only checks do not replace Enforce, client/server gameplay or performance measurements",
-        "Optional external model and corpora are not included in this portable artifact"
+  "schema_version": 1,
+  "version": "2.0.4",
+  "scope": "portable_release_local_checks",
+  "status": "passed_local_checks",
+  "provenance": {
+    "basis": "Fresh owning suites in a clean manifest-only copy; separate clean bootstrap and transfer audit",
+    "contains_machine_paths": false,
+    "contains_private_runtime_configuration": false
+  },
+  "owning_tests": {
+    "status": "passed",
+    "fresh_run_for_this_version": true,
+    "core_passed": 46,
+    "memory_passed": 20,
+    "workbench_passed": 153,
+    "total_passed": 235,
+    "skipped": 0,
+    "knowledge_passed": 16
+  },
+  "portable_tests": {
+    "passed": 3,
+    "skipped": 0,
+    "nested_owning_suites_not_double_counted": true
+  },
+  "transfer_checks": {
+    "status": "passed",
+    "total_passed": 10,
+    "checks": [
+      "source_manifest_sha256",
+      "neutral_memory_and_counts",
+      "local_markdown_links",
+      "source_directory_cannot_become_runtime_data",
+      "isolated_configure_doctor_health_verify",
+      "roles_and_missing_model_without_download",
+      "scaffold_lint_builtin_pbo_readback_release",
+      "task_create_resume_claim_submit_independent_review",
+      "wrong_model_sha_is_nonmutating",
+      "reconfigure_preserves_memory_and_source_allowlist"
     ]
+  },
+  "release_inventory": {
+    "skills": 27,
+    "specialist_profiles": 22,
+    "cli_commands": 38,
+    "memory_templates": "versioned_under_templates/memory",
+    "mutable_memory": "generated_locally_and_excluded_from_git"
+  },
+  "new_regressions": [
+    "Pinned wiki import accepts only verified selected files and preserves original license",
+    "Unsafe ZIP paths, symlinks, duplicate names, size limits, hash drift and existing targets are rejected",
+    "Explicit archive and download imports verified 107 selected and 106 indexed files",
+    "Clean-package configure preserves independent wiki root and does not download data",
+    "Four real API searches expose pinned commit, SHA and community authority channel",
+    "Wiki topic context and deep integrity verification pass with external corpus"
+  ],
+  "build_classification": {
+    "backend": "builtin",
+    "mode": "pack_only",
+    "config_cpp": "kept_as_text",
+    "Enforce": "outside_this_python_tool_validation",
+    "runtime_compatibility": "not_claimed"
+  },
+  "external_dependencies": {
+    "model_bundled": false,
+    "model_runtime_bundled": false,
+    "knowledge_corpus_bundled": false,
+    "dayz_tools_bundled": false,
+    "configure_downloads": false,
+    "licensed_adaptations_included": [
+      "docs/WIKI_GUIDE.md",
+      "memory/cards/dayzmods-community-wiki.md"
+    ]
+  },
+  "github_ci": {
+    "workflow": ".github/workflows/test.yml",
+    "matrix": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "receipt": "Hosted CI for the exact published commit is linked in its GitHub release"
+  },
+  "limitations": [
+    "Scenario validation verifies reported data and file identity, not the truth of gameplay observations",
+    "File checks detect changes during reads; they do not lock files against changes after validation returns",
+    "Python and pack-only checks do not replace Enforce, client/server gameplay or performance measurements",
+    "Optional external model and corpora are not included in this portable artifact"
+  ],
+  "wiki_checks": {
+    "selected_files": 107,
+    "indexed_files": 106,
+    "clean_package_e2e": 9,
+    "upstream_scripts_executed": false,
+    "all_wiki_examples_compiled": false,
+    "changed_skills_validated": 2
+  }
 }

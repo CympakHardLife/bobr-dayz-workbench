@@ -13,3 +13,7 @@ description: "Разрабатывать и разбирать моды DayZ п�
 AI — [dayz-ai-engineering](../dayz-ai-engineering/SKILL.md).
 Память и cache — [архитектура](../../../core/MEMORY_ARCHITECTURE.md).
 Корпуса и модель optional; отсутствие отображается явно. Не обещай provider cache.
+
+## Community Wiki
+
+По теме community-wiki читать docs/WIKI_GUIDE.md: проверенные оговорки и подключение внешнего corpus через core scope wiki. Отделять community reference от owning API и игрового доказательства. Эта справка имеет отдельный CC BY-SA scope; условия — THIRD_PARTY_NOTICES.md.

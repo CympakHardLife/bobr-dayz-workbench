@@ -1,0 +1,667 @@
+{
+  "schema_version": 1,
+  "description": "Pinned selection only; upstream corpus is external data and not bundled in Workbench. CLI imports only listed bytes; it does not attest every unselected ZIP file.",
+  "record": {
+    "dataset": "StarDZ-Team__DayZ-Modding-Wiki",
+    "kind": "community_documentation",
+    "engine": "DayZ hybrid; verify actual target",
+    "game": "DayZ",
+    "channel": "community_wiki_english_not_engine_api_authority",
+    "source_url": "https://github.com/StarDZ-Team/DayZ-Modding-Wiki",
+    "publisher": "StarDZ-Team",
+    "commit": "e8d971e3941c274befdd6596baba2e5119efb3e4",
+    "commit_date": "2026-09-11T16:21:30Z",
+    "license_api": {
+      "documentation": "CC-BY-SA-4.0",
+      "code_examples": "MIT"
+    },
+    "license_paths": [
+      "LICENCE"
+    ],
+    "indexed_selection": "105 English markdown pages plus README and LICENCE; no upstream agent directives/scripts/translations indexed",
+    "files": [
+      {
+        "path": "en/01-enforce-script/01-variables-types.md",
+        "bytes": 26200,
+        "sha256": "c60a36ef00d2611dc917174b728738a2b0ecdb214e1e696f7f541959e8011ae6",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/02-arrays-maps-sets.md",
+        "bytes": 30356,
+        "sha256": "254a6a2f6449c0a21aa3922be3f40a1848d554f4825fca67ad1a6a376700933e",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/03-classes-inheritance.md",
+        "bytes": 36059,
+        "sha256": "7d05a410a6773dfe5b576163f7998eb10a74d55d4792773b0cabe230c166fad6",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/04-modded-classes.md",
+        "bytes": 34103,
+        "sha256": "1e0db5e3be3bc03b2983a864c8be56d59282ef724cef5f501d9ab9a3528f4550",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/05-control-flow.md",
+        "bytes": 16487,
+        "sha256": "cff3cd3578a9dc4863e924598d9213e371cd8bdc0f3a5d9970136e98aa4152d7",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/06-strings.md",
+        "bytes": 16101,
+        "sha256": "e6e0fefffdc3d404b040d2aa0260dc4366e3a0ede1cedc8154a9bc1e1ceb7c67",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/07-math-vectors.md",
+        "bytes": 20502,
+        "sha256": "20680ef3d153f3c47e26fe58771e9809ddeaa88b637b78d10a2672221b6c9c0e",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/08-memory-management.md",
+        "bytes": 29117,
+        "sha256": "f3cd556ac51b4ab84557133cfe32d1c36e4192d8012ac62d07133a594c84a31f",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/09-casting-reflection.md",
+        "bytes": 20858,
+        "sha256": "0c6398df1bebc0e19792b304ece37a334328e91765b1008c9fbdb78d01b6b9e6",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/10-enums-preprocessor.md",
+        "bytes": 17393,
+        "sha256": "566e21c01001b41ff284edc9e4140ec9aedcc81802912b789c4a54ba9106e4cc",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/11-error-handling.md",
+        "bytes": 24337,
+        "sha256": "2c2356e8e22325bfc77a740de12a3ac56c7d94a1edd9078a13633c59f91bac6f",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/12-gotchas.md",
+        "bytes": 32696,
+        "sha256": "95879b3bdc113b680aa5ab8dd0d74948bc0f49ecab20f0612840218a81359885",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/01-enforce-script/13-functions-methods.md",
+        "bytes": 42896,
+        "sha256": "3e865c30946837207a47ab08285c361afd5562d21bedcd59571d2dd0c04ec48d",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/02-mod-structure/01-five-layers.md",
+        "bytes": 21048,
+        "sha256": "1219ff05733ecd4ec699212e1ad24343cb9a6d7dc647b21d91197354348a1248",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/02-mod-structure/02-config-cpp.md",
+        "bytes": 40915,
+        "sha256": "50f846d7cd9b1c9ac89391cfec88be26f6ef90714f5478ade8a3516e48988783",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/02-mod-structure/03-mod-cpp.md",
+        "bytes": 17995,
+        "sha256": "f590e0271a659ebed61df447cb2b7fa227310ab90ac473d413dc17bcbe2b9a59",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/02-mod-structure/04-minimum-viable-mod.md",
+        "bytes": 14903,
+        "sha256": "bedf6dfeac18d9c16b55719b6e037036b0a4af20cd126b150cdc82998b62b8b9",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/02-mod-structure/05-file-organization.md",
+        "bytes": 27720,
+        "sha256": "57e7fe43b7476ccd71bb8981cde5e9c0262e2d5b047bc164918f6960fb9d5f67",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/02-mod-structure/06-server-client-split.md",
+        "bytes": 42627,
+        "sha256": "496716ceb37227bf387429faca76ddd86c7aa197c3b09551bdec178a5114d27d",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/01-widget-types.md",
+        "bytes": 19507,
+        "sha256": "00f2700348c52ae9c0a9f5acc97c5152191ea947f965156c19c2297df32ff465",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/02-layout-files.md",
+        "bytes": 20584,
+        "sha256": "8d1ad3846458fefa37ebf5f991db220f7a192ab2dd8726fc27048b373667b2f6",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/03-sizing-positioning.md",
+        "bytes": 13021,
+        "sha256": "845c35560bc2d8339a89e17a62964f2a9f01b79bffb2e2c75f5fce7898807242",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/04-containers.md",
+        "bytes": 13871,
+        "sha256": "f60ed7caab9f0a5aa18c368428cc33c80fdc25e44dfd39c79183bfd03d6a705a",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/05-programmatic-widgets.md",
+        "bytes": 17360,
+        "sha256": "adb7cc7051a2cce93f2a2d869130688cd312047638e86bdd08b6ea178bbfb702",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/06-event-handling.md",
+        "bytes": 18568,
+        "sha256": "fd3e180d24246bbdf2d59a708e9e57d932f63274460e648358b1089cfb83205f",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/07-styles-fonts.md",
+        "bytes": 16159,
+        "sha256": "95909f8ce4b19d4f9364915653fe33361557a56d97e8c3de87e40c2d7522c5c7",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/08-dialogs-modals.md",
+        "bytes": 36023,
+        "sha256": "2e9684095a99714ba3794bda78a383343a4f17b8dbcb92281074a74f5429cab2",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/09-real-mod-patterns.md",
+        "bytes": 29744,
+        "sha256": "f044b530ff1367f6f69f73cec4208a881df0dbd7aa6d38b4196a65919decb2b0",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/03-gui-system/10-advanced-widgets.md",
+        "bytes": 44330,
+        "sha256": "08109da58c4b21075e95ee52a1f32ba2c22ff31f6a34c634b60887a99f4b67f4",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/04-file-formats/01-textures.md",
+        "bytes": 19446,
+        "sha256": "ce49a12726bd186d4e23d0e3cd54c6182b9ed0b86ca50f0d50da9d342c0ee36c",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/04-file-formats/02-models.md",
+        "bytes": 34612,
+        "sha256": "95f71199907a879d21a02c6746dfee10d09b84a4ae7db21fd6e9defa8cf6dbe4",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/04-file-formats/03-materials.md",
+        "bytes": 28694,
+        "sha256": "de05e487d3e4473b58b88d47fe0d129ac41b65ce38168f1787b0968af0b49d77",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/04-file-formats/04-audio.md",
+        "bytes": 23670,
+        "sha256": "06a77616e26c0834f64631422f527c401f8f2bf24ab14f370c7ffa5b33e34d01",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/04-file-formats/05-dayz-tools.md",
+        "bytes": 20619,
+        "sha256": "cfb5daad27e45d7e3e09b72c9ee0933f26b884fdb6de4a29eeaa1f051288bd83",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/04-file-formats/06-pbo-packing.md",
+        "bytes": 26793,
+        "sha256": "dda31bbe5068507bfc489aac2108e6500a5c50775d4df5f4ed9ba09e885e3401",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/04-file-formats/07-workbench-guide.md",
+        "bytes": 26046,
+        "sha256": "2e907cc06f478c877aa1c53dce23fcc39826086a746dc0af9e178171bcc627be",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/04-file-formats/08-building-modeling.md",
+        "bytes": 26378,
+        "sha256": "78b3365ce62e04ff92253693a3d8dd1e3c51023145a25bae135d1cdeef664a61",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/05-config-files/01-stringtable.md",
+        "bytes": 21808,
+        "sha256": "0660358a3579282b4621eb50d377926b7c46eeec06164e7f7061e1a875cbfd6a",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/05-config-files/02-inputs-xml.md",
+        "bytes": 22695,
+        "sha256": "eaec1aecb258b3c5b04076805d2114a77bd625c42576e5edd40d3f5100c2c683",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/05-config-files/03-credits-json.md",
+        "bytes": 13443,
+        "sha256": "719b2bb0856bb52a321b4b749112007137f13ea71b758a24ae64bc40f3d33b2a",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/05-config-files/04-imagesets.md",
+        "bytes": 24247,
+        "sha256": "0a3dc7931b20b61bcacdace0270808bbd8d7fd15fcbe66b8ff9de19f66ecb4f4",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/05-config-files/05-server-configs.md",
+        "bytes": 20411,
+        "sha256": "fbdc13fc9fcdd9b1c82e059b7bf4d9edc1dd84abe517ba0254a669b4d4f0851d",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/05-config-files/06-spawning-gear.md",
+        "bytes": 30590,
+        "sha256": "9f6686caeec711b8788a5e46ac1e7eb2cc817873fdc00bd15708421a2d87faa3",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/01-entity-system.md",
+        "bytes": 48859,
+        "sha256": "887b1266c3f68bce5bcb77c655f01ecb8659bf49e134704697af283d4693940e",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/02-vehicles.md",
+        "bytes": 18048,
+        "sha256": "baa8886eabcd39b3c4280e032dd871b6dd50c472e50f552aeed37e5d59a4c4c8",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/03-weather.md",
+        "bytes": 13357,
+        "sha256": "9d6fc0b0f39bfa4b6ed8ed603bc3cb2379d673aba2fef1ddc72ae49d8c0f849b",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/04-cameras.md",
+        "bytes": 10227,
+        "sha256": "0eb08f2b8715148eb473b5661f11ddc808ee0f086746fc23c7d1d035fe95edaa",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/05-ppe.md",
+        "bytes": 13139,
+        "sha256": "db1180f8c3babca43a4bad3bd76cb95bd76c2571fcb33e6eb17f6b8c27b7d93c",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/06-notifications.md",
+        "bytes": 12948,
+        "sha256": "9f178062c4924c9b39442b41746660f342841800ebaca297c27a814017c66688",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/07-timers.md",
+        "bytes": 15626,
+        "sha256": "c644757264badb92074dd8ce39e4c8a0f11afd4cd537d6a5e63eca2adba679ad",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/08-file-io.md",
+        "bytes": 15177,
+        "sha256": "76500a94e9a50f05baf2959c7dbab8af4d369c2e2a2954ff370ea58d895c05da",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/09-networking.md",
+        "bytes": 21359,
+        "sha256": "2b2f29b98b4d83068db77d99252f5aed9a554d90073fd7ac5e16659ebe7d6ffa",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/10-central-economy.md",
+        "bytes": 20304,
+        "sha256": "46d81eed87b138a3f6ec4a144ab54226582967532872334934792579029ff377",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/11-mission-hooks.md",
+        "bytes": 40708,
+        "sha256": "98b4c5780a28ba46ae9ddfefdd3a8d33782f50e59b07a04961abf76c46105544",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/12-action-system.md",
+        "bytes": 42278,
+        "sha256": "dbe7b048690e50acd961a92e6f400c7bdbc98e5e9af4e20618a59132d57bed94",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/13-input-system.md",
+        "bytes": 36389,
+        "sha256": "968a5ec8d1cb3ac475e2e7077af809d91a6946d34ac4a7dd44776a3525262dc3",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/14-player-system.md",
+        "bytes": 46736,
+        "sha256": "d958745dac92fa6c1da0c493823d8b04d1cf84239f852949d7fff8da24f3709d",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/15-sound-system.md",
+        "bytes": 40643,
+        "sha256": "16dce2ffc39d5dace9e85c535fa50fa4f8dbf710023cc50ae5409d3a2c5f22fe",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/16-crafting-system.md",
+        "bytes": 47252,
+        "sha256": "15f6c58bd0e551e9e3f721aafeaf489cb04717a4f320d9bfedbfab3df1c309d7",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/17-construction-system.md",
+        "bytes": 24268,
+        "sha256": "cda6f6997163efba17073a26c5147fcc6c01b0f5b588a58ea1490faa87b1d066",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/18-animation-system.md",
+        "bytes": 41939,
+        "sha256": "34ffd6c5ec23c2172af51c513da23a2ab794261428c3950dac9bec98b71ffe7b",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/19-terrain-queries.md",
+        "bytes": 37659,
+        "sha256": "5b778982556c5bd20550fb911b381d91c59b0e79b4f3dfb6859d992593bceb6e",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/20-particle-effects.md",
+        "bytes": 40312,
+        "sha256": "f43a09ae940f1bd84cfc6dce41591839d302b989647e437d19ec120843dd1ef1",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/21-zombie-ai-system.md",
+        "bytes": 41679,
+        "sha256": "a098ffa43346aa178761c8caf8b1e3d4666ecda8f7c658299205fb78158caa6b",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/22-admin-server.md",
+        "bytes": 46185,
+        "sha256": "329209692b461a96727f5770adc0d71d5e538f040f7713d767128d7ee7d1cbb6",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/23-world-systems.md",
+        "bytes": 46905,
+        "sha256": "417addc0c9f422a573a5ef2f7a14dfd2197eae431f1ad30deb41944cf2e5f658",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/06-engine-api/quick-reference.md",
+        "bytes": 33547,
+        "sha256": "8c366c16363f0b9b37c939ddbe96d4a552dc7602033196fc5a750ef6c8d55b0e",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/07-patterns/01-singletons.md",
+        "bytes": 21533,
+        "sha256": "58b2444184da21438e413fe73a4e5ec22dd3972a8c866564c88a1615f604f888",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/07-patterns/02-module-systems.md",
+        "bytes": 31388,
+        "sha256": "2937c0f49d173eda1215d4226d53525868aa690d59e5fa333dce7b49d51fef2d",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/07-patterns/03-rpc-patterns.md",
+        "bytes": 30677,
+        "sha256": "eac39002165a9bc1d4cd60f8953b39c994c9b7105e09798e4a0cb6be7c02c941",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/07-patterns/04-config-persistence.md",
+        "bytes": 26300,
+        "sha256": "479e3283c99812b46bccfe4d64ddbd6caea68ec2de33cec80867cc66ced8946b",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/07-patterns/05-permissions.md",
+        "bytes": 24887,
+        "sha256": "0b2178cd1b0afd08de670ad29b6417c2ca909158deebec2dcdcf2463a792a40b",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/07-patterns/06-events.md",
+        "bytes": 25603,
+        "sha256": "23e5ccc2a2538ce7f292ffe6d1b4a0d0b97a5b5d1a158c7d89102b61ffdcec84",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/07-patterns/07-performance.md",
+        "bytes": 25187,
+        "sha256": "c0e42e010b2309534df986a08682f5949a8cf87cd810e945c18d6924c80be8bf",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/01-first-mod.md",
+        "bytes": 24486,
+        "sha256": "1eb49b731339c72dcbaaa342e1971b59c43e2f0118ee5fc458a7611834cbdec3",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/02-custom-item.md",
+        "bytes": 36076,
+        "sha256": "6d36eff473b0919cbd5db1169adb3b387016032ac6cc83dbaf131216f1cdab29",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/03-admin-panel.md",
+        "bytes": 36059,
+        "sha256": "6d52ed6d18d506658b7696218fee88b8db0bb1fe098b825e207277592127211d",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/04-chat-commands.md",
+        "bytes": 39294,
+        "sha256": "3291a2925da56cad2b1011ded5b0bafe4866ad87c21f1b8d2f342671bfa0603b",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/05-mod-template.md",
+        "bytes": 20454,
+        "sha256": "1c99966c55afacb6f467336623df5550a6eec401374cc0aaa85efc7f805e3f2f",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/06-debugging-testing.md",
+        "bytes": 35929,
+        "sha256": "8de8cd086f447ee2ea1c3eee09d5758e0cf9e4a566dcd8b311c2f6d6c901cbd2",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/07-publishing-workshop.md",
+        "bytes": 26500,
+        "sha256": "5049b47865322837a7b22ce3c93151af9fa5e665dd6034de1d824a3a59733408",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/08-hud-overlay.md",
+        "bytes": 42834,
+        "sha256": "47d1508e62e0ad8002d263491a9e047880919e6af310110f5735a0d04ddb0e6c",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/09-professional-template.md",
+        "bytes": 67613,
+        "sha256": "957a09ae356ed930a796e551436f2c0f824d7d75d6c4b5cdd4df07961c9082f3",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/10-vehicle-mod.md",
+        "bytes": 46284,
+        "sha256": "9ba2a4ff68479eb2a6633eca98c726614e76bc04bdb1d8be1abb1ac3cdd1a3db",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/11-clothing-mod.md",
+        "bytes": 22068,
+        "sha256": "71d0e39c146caf389734d01e32aaf630e6f67286bd70d8ecccc133b4d1800f1d",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/12-trading-system.md",
+        "bytes": 39808,
+        "sha256": "5c729930b0b975e5b0fa5b84966b2a6a88910fc72fb6072b3165d917ad07e5dc",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/08-tutorials/13-diag-menu.md",
+        "bytes": 35651,
+        "sha256": "0efd4c7ec47e6e8a43bcff72da93b99e47b52008ec64872da40d4d0771c212f4",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/01-server-setup.md",
+        "bytes": 9327,
+        "sha256": "0c946033564f73e4369a1d5d197ec7773d353a1c61499bf02c4a14d2104f36dc",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/02-directory-structure.md",
+        "bytes": 16661,
+        "sha256": "93b7defb6e2ca8450215cd8e40926520328e933ad5e6882dfa0e809be99c88bd",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/03-server-cfg.md",
+        "bytes": 18566,
+        "sha256": "8695192d900293c175ef5dfc819d4ecf8f98be48650d569a065418ca65e4e5ce",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/04-loot-economy.md",
+        "bytes": 37414,
+        "sha256": "02abb6c2fe885c5467e1d6e5919b4c0b078057a9515c69d410af35ab27c6a5e4",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/05-vehicle-spawning.md",
+        "bytes": 16644,
+        "sha256": "3c35a380a9fa6e072c32e2c201333c07111ccb79efc87bec4e447eb78c479b11",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/06-player-spawning.md",
+        "bytes": 15925,
+        "sha256": "e2eea008f92e744239928f2c89c1c52179ab9ca2d10ddf72305d75a7872f7ff0",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/07-persistence.md",
+        "bytes": 14605,
+        "sha256": "452fc59b6a660bccfcc33d214dc5f9e2a7e968e9cfd4f9bf9c6b5040e6474cfc",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/08-performance.md",
+        "bytes": 11867,
+        "sha256": "186220bd449751694cb39e96331c53cb52923d88d19881d833223622f7909e8c",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/09-access-control.md",
+        "bytes": 7652,
+        "sha256": "b411865716dc408ff832d1417f3ebfed19bf737d3b3ba62f95f2cb9f9c9f6166",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/10-mod-management.md",
+        "bytes": 8368,
+        "sha256": "03c68398dc334e990d68945f34fb2f1e6108f103494443a9e7a9ded214af82d8",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/11-troubleshooting.md",
+        "bytes": 10804,
+        "sha256": "4ed6cea5851ba4d1454130f1040cc11cd6df97aabdf9878db8ec24c019cc58db",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/09-server-admin/12-advanced.md",
+        "bytes": 11963,
+        "sha256": "e1d91262cf49f6dbe3f3c48c111a43d3c47d187e8e83a4d88460074ab6ae8d33",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/cheatsheet.md",
+        "bytes": 11887,
+        "sha256": "f6950521917493c71f9a680bd02c5d514dd7f43b2960d06aa8c98ab5d66c17d0",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/faq.md",
+        "bytes": 12521,
+        "sha256": "b2079a4573e68911e59b293329e6af6b2b92f74061e212443d0a6fd6a6461d5b",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/glossary.md",
+        "bytes": 63306,
+        "sha256": "627f3d7b9c8fab397fccc3f4df3c3d723d77a3012dd6d2daad29fab1e2f00354",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/index.md",
+        "bytes": 11008,
+        "sha256": "7852c6dbf7db9889950ea6d826407d9c432c8f4340f52f6deec2403df5a6b1b8",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/README.md",
+        "bytes": 11222,
+        "sha256": "61a7ba0be501243fcca07a5a4a1c8b678987d2e2164213c7969e0ed757eb79b1",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "en/troubleshooting.md",
+        "bytes": 37228,
+        "sha256": "f63c0c82f7be34a8dda4677496fab971f908f13d1df2330cc05a9fb9730fa73b",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "README.md",
+        "bytes": 10628,
+        "sha256": "dad9b13d6a7eb5e889b20e7396441c14aa790819d5d4adfab2a3165f4068f75e",
+        "encoding": "utf-8-sig"
+      },
+      {
+        "path": "LICENCE",
+        "bytes": 2068,
+        "sha256": "d759f569c88b8d9bfe6a0ed096c67516699fe88679687c05d3635362e6007260",
+        "encoding": "utf-8-sig"
+      }
+    ]
+  }
+}

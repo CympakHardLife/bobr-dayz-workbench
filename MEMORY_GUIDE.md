@@ -9,3 +9,5 @@ experience.json хранит user_decision/source_confirmed/runtime_confirmed/hy
 После значимой записи выполняй `bobr.py snapshot`, затем `bobr.py verify`.
 Checkpoint — ручной allowlist снимок, без автослужб и чтения переписки.
 Cache в data-root производный; его очистка не удаляет память и исходники.
+
+2.0.4: тема community-wiki, карточка и docs/WIKI_GUIDE.md включены в ручной snapshot. Corpus хранится отдельно в настроенном wiki-root, не в снимке. Автохуки не добавлены.

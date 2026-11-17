@@ -12,3 +12,5 @@
 - `engine-coding`: DayZ, Reforger и RV3: раздельные контексты
 - `core`: Память и проверяемый поиск
 - `workbench`: Задания, роли и воспроизводимые результаты
+
+- community-wiki: memory/cards/dayzmods-community-wiki.md;105EN глав, поиск и проверенные ограничения API.

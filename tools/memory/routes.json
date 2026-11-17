@@ -85,6 +85,13 @@
       "sources": [
         "workbench/START_HERE.md"
       ]
+    },
+    "community-wiki": {
+      "description": "StarDZ Wiki: импорт, проверенные оговорки и адресный поиск",
+      "summary": "memory/cards/dayzmods-community-wiki.md",
+      "sources": [
+        "docs/WIKI_GUIDE.md"
+      ]
     }
   }
 }

@@ -21,3 +21,7 @@ recovery; широкий ray не гарантирует валидную тра
 Знания/корпуса: [карта](references/knowledge-map.md). Независимые проверки включают
 новый шум, повторный голос, потерю цели, высоту, двери, лестницы, узкие проходы,
 отмену, смерть/удаление и нагрузку. Отчёт разделяет static/PBO/Enforce/game.
+
+## Community Wiki
+
+По теме community-wiki читать docs/WIKI_GUIDE.md: проверенные оговорки и подключение внешнего corpus через core scope wiki. Отделять community reference от owning API и игрового доказательства. Эта справка имеет отдельный CC BY-SA scope; условия — THIRD_PARTY_NOTICES.md.

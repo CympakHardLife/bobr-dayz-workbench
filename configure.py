@@ -19,7 +19,7 @@ import sys
 import uuid
 
 
-VERSION = "2.0.3"
+VERSION = "2.0.4"
 ROOT = Path(__file__).resolve().parent
 SCOPES = {
     "dayz": ("DayZ", ["BohemiaInteractive__DayZ-Script-Diff"]),
@@ -27,6 +27,7 @@ SCOPES = {
     "reforger": ("Arma Reforger", ["BohemiaInteractive__Arma-Reforger-Script-Diff"]),
     "toolkits": ("Optional toolkit references", ["DayZ-n-Chill__Agentic-Z", "StarDZ-Team__Dayz-Modding-Skills"]),
     "plugmem": ("Optional memory research", ["TIMAN-group__PlugMem"]),
+    "wiki": ("DayZ community documentation", ["StarDZ-Team__DayZ-Modding-Wiki"]),
 }
 SOURCES = ["https://community.bistudio.com/wiki", "https://github.com/BohemiaInteractive/DayZ-Script-Diff",
            "https://github.com/ExpansionModTeam/DayZ-Expansion-Scripts", "https://github.com/ysaroka/InediaInfectedAI",
@@ -113,7 +114,7 @@ def source_manifest(root):
 
 def configure(argv=None, *, root=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    for option in ("data-root", "tools-root", "knowledge-root", "model", "llama", "model-sha256", "llama-sha256", "runtime-manifest", "owner"):
+    for option in ("data-root", "tools-root", "knowledge-root", "wiki-root", "model", "llama", "model-sha256", "llama-sha256", "runtime-manifest", "owner"):
         parser.add_argument("--" + option)
     parser.add_argument("--assistant-name", default="Бобр")
     parser.add_argument("--disable-model", action="store_true")
@@ -126,6 +127,7 @@ def configure(argv=None, *, root=None):
     data = checked_path(args.data_root or old.get("data_root") or root / ".local")
     tools = checked_path(args.tools_root or old.get("tools_root") or data / "unconfigured/dayz-tools")
     knowledge = checked_path(args.knowledge_root or old.get("knowledge_root") or data / "unconfigured/knowledge")
+    wiki = checked_path(args.wiki_root or old.get("wiki_root") or data / "knowledge/wiki")
     if data == root or root.is_relative_to(data):
         raise ValueError("data-root должен быть отдельной папкой данных, не корнем/родителем исходников")
     if data.is_relative_to(root) and not data.is_relative_to(root / ".local"):
@@ -162,7 +164,7 @@ def configure(argv=None, *, root=None):
                  "workspace_root": str(data / "projects"), "test_workspace": str(data / "tests"),
                  "runs_root": str(data / "runs"), "reports_root": str(data / "reports"),
                  "builds_root": str(data / "builds"), "tools_root": str(tools),
-                 "knowledge_root": str(knowledge), "temp_root": str(data / "temp"),
+                 "knowledge_root": str(knowledge), "wiki_root": str(wiki), "temp_root": str(data / "temp"),
                  "workdrive": str(data / "unconfigured/workdrive"), "game_root": str(data / "unconfigured/dayz"),
                  "server_root": str(data / "unconfigured/dayz-server"), "automatic_game_launch": False,
                  "signing": "owner_manually", "network": False, "approved_write_roots": [str(data)],
@@ -173,6 +175,7 @@ def configure(argv=None, *, root=None):
             "scopes": {name: {"root": str(knowledge), "game": game, "datasets": datasets} for name, (game, datasets) in SCOPES.items()},
             "backends": {"local": {"status": "active", "implementation": "File memory and optional SQLite FTS5 corpora", "network": False},
                          **{name: {"status": "disabled", "adapter_implemented": False} for name in ("pinecone", "chroma", "milvus", "plugmem", "mem0", "letta")}}}
+    core["scopes"]["wiki"]["root"] = str(wiki)
     research = {"schema_version": 1, "core_config": str(root / "core/config.json"),
                 "cache_root": str(data / "cache/research"), "timeout_seconds": 15, "cache_ttl_seconds": 86400,
                 "max_cache_entries": 64, "model_timeout_seconds": 90, "model": model,

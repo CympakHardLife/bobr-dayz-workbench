@@ -45,7 +45,7 @@ class PortableTests(unittest.TestCase):
             root = Path(folder) / "owning-suites"
             clone_package(root)
             self.run_python(["configure.py"], cwd=root)
-            for directory in ("tools/core", "tools/memory", "tools/workbench"):
+            for directory in ("tools/core", "tools/memory", "tools/workbench", "tools/knowledge"):
                 with self.subTest(directory=directory):
                     self.run_python(["-m", "unittest", "discover", "-s", directory, "-v"], cwd=root)
 
