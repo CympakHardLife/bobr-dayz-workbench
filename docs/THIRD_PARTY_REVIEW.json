@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-17",
+  "scope": "Seven directly supplied GitHub reference snapshots; no upstream code, corpus or model is added by this review.",
+  "baseline_commit": "9a3a5eec1548edf6c583cd92f36046bb9d956a18",
+  "sources": [
+    {
+      "dataset": "DayZ-n-Chill__Agentic-Z",
+      "source_url": "https://github.com/DayZ-n-Chill/Agentic-Z",
+      "commit": "54ddf1627556abfd5b4e6af3a8f6fe9f37417106",
+      "archive_sha256": "a28a17bee8dd2f87e050fff6f5771876ec07aefb07ea5ff85fefd3dd79550033",
+      "attribution": "Copyright (c) 2026 DayZ n' Chill",
+      "license_scope": "Custom source-available license, expressly not open source or MIT; covers code, config, agents, skills, prompts, docs and derivatives.",
+      "conditions": [
+        "Free-of-charge sharing of original/modified Software allowed only with complete license, original copyright and upstream link.",
+        "No sale, licensing/sublicensing or commercialization of Software itself, in whole or substantial part; no inclusion of any Software part in charged offerings or selling access.",
+        "Do not present upstream Software/code as own. Content made with Software may be sold only if it does not contain Software."
+      ],
+      "publication_policy": "Keep reference-only; do not import agents/skills/prompts/code or relicense derivatives under proprietary Workbench terms. Separate approved copying would require upstream conditions and can constrain paid distribution.",
+      "distribution_status": "reference_only_not_bundled",
+      "license_evidence": [
+        {
+          "relative": "LICENSE",
+          "sha256": "fcffd259dfc3b341912d9a4ca3c9f5cb84967bf8da6502b6a71590bf7bce3141",
+          "bytes": 2014,
+          "url": "https://github.com/DayZ-n-Chill/Agentic-Z/blob/54ddf1627556abfd5b4e6af3a8f6fe9f37417106/LICENSE"
+        }
+      ]
+    },
+    {
+      "dataset": "StarDZ-Team__Dayz-Modding-Skills",
+      "source_url": "https://github.com/StarDZ-Team/Dayz-Modding-Skills",
+      "commit": "3f07308589d4be1c3fa20cf303c741a2f03655fa",
+      "archive_sha256": "858bba2964d928f916f099403c6e483681764a890d98eeb2af75f7e566d5be46",
+      "attribution": "Copyright (c) 2025 StarDZ Team",
+      "license_scope": "MIT for repository Software; separately owned assets/dependencies remain separate.",
+      "conditions": [
+        "Retain copyright and complete permission/disclaimer notice in copies or substantial portions.",
+        "Commercial use/modification/redistribution permitted subject to notice retention; MIT does not erase third-party rights."
+      ],
+      "publication_policy": "Reference-only now; direct incorporation requires exact source/commit/files and complete MIT notice.",
+      "distribution_status": "reference_only_not_bundled",
+      "license_evidence": [
+        {
+          "relative": "LICENSE",
+          "sha256": "dfcacb644fbce54b89da7a70926158f573b6a3ff1aa0d2f6f8289ae271436b44",
+          "bytes": 1068,
+          "url": "https://github.com/StarDZ-Team/Dayz-Modding-Skills/blob/3f07308589d4be1c3fa20cf303c741a2f03655fa/LICENSE"
+        }
+      ]
+    },
+    {
+      "dataset": "PDTFawks__ServerZ",
+      "source_url": "https://github.com/PDTFawks/ServerZ",
+      "commit": "ab1f4a93b1de8dee975f645fb5df335dfc90253d",
+      "archive_sha256": "d382f56d826d3bf437200d539f71a3131d6965309fef5e84826f9b7bae34f3bc",
+      "attribution": "Copyright (c) 2024 GodBleak",
+      "license_scope": "MIT for repository Software; separately owned assets/dependencies remain separate.",
+      "conditions": [
+        "Retain copyright and complete permission/disclaimer notice in copies or substantial portions.",
+        "Commercial use/modification/redistribution permitted subject to notice retention; MIT does not erase third-party rights."
+      ],
+      "exceptions": [
+        "Requested repository is fork of GodBleak/ServerZ. Copyright belongs to GodBleak, not automatically fork owner PDTFawks."
+      ],
+      "publication_policy": "Reference-only now; direct incorporation requires exact source/commit/files and complete MIT notice.",
+      "distribution_status": "reference_only_not_bundled",
+      "license_evidence": [
+        {
+          "relative": "LICENSE",
+          "sha256": "1fbfaa3338d3a47e097072844af2cb3ed840059f019edbd3f15732ab7600eee5",
+          "bytes": 1065,
+          "url": "https://github.com/PDTFawks/ServerZ/blob/ab1f4a93b1de8dee975f645fb5df335dfc90253d/LICENSE"
+        }
+      ]
+    },
+    {
+      "dataset": "PDTFawks__enfusion-community-documentation",
+      "source_url": "https://github.com/PDTFawks/enfusion-community-documentation",
+      "commit": "3ae009445515ebf91fde92952d7b9c898ff2ccba",
+      "archive_sha256": "9183587d73b391445d8d45f2646a4b5ad89144a05028636866ec78cdd8224140",
+      "attribution": "Theme: Copyright (c) 2022 Robert Kaussow. Documentation grant not established.",
+      "license_scope": "No root/content license grant found in full pinned ZIP. MIT belongs only to themes/hugo-geekdoc; bundled generated JS has separate notices.",
+      "conditions": [
+        "Do not infer permission to republish original docs/code from a public GitHub repository.",
+        "Theme MIT cannot license original documentation; generated JS notices cannot license whole site."
+      ],
+      "exceptions": [
+        "clipboard.js MIT and FlexSearch Apache2 notices exist in public/theme static JS; Mermaid refers to additional license file. Do not vendor generated website assets."
+      ],
+      "publication_policy": "Reference/link-only. Exclude original docs, translations/adaptations and original code until rights independently established.",
+      "distribution_status": "reference_only_not_bundled",
+      "license_evidence": [
+        {
+          "relative": "public/js/273-0f8b4fc3.chunk.min.js.LICENSE.txt",
+          "sha256": "208a100df74719dca76c3be84fdb35145d70679599d4ec4534b9709e404e8c85",
+          "bytes": 74,
+          "url": "https://github.com/PDTFawks/enfusion-community-documentation/blob/3ae009445515ebf91fde92952d7b9c898ff2ccba/public/js/273-0f8b4fc3.chunk.min.js.LICENSE.txt"
+        },
+        {
+          "relative": "public/js/main-4f8bb62c.bundle.min.js.LICENSE.txt",
+          "sha256": "08253e0f29ea53ce3ba5fc47908e23ee5367c4cff4b6863ff0747b56e726d917",
+          "bytes": 93,
+          "url": "https://github.com/PDTFawks/enfusion-community-documentation/blob/3ae009445515ebf91fde92952d7b9c898ff2ccba/public/js/main-4f8bb62c.bundle.min.js.LICENSE.txt"
+        },
+        {
+          "relative": "public/js/search-1c4cfb2d.bundle.min.js.LICENSE.txt",
+          "sha256": "dffa76886513ecd966a8fa627435f65904b67cf9d7393f0ac8206b9d57849f46",
+          "bytes": 178,
+          "url": "https://github.com/PDTFawks/enfusion-community-documentation/blob/3ae009445515ebf91fde92952d7b9c898ff2ccba/public/js/search-1c4cfb2d.bundle.min.js.LICENSE.txt"
+        },
+        {
+          "relative": "themes/hugo-geekdoc/LICENSE",
+          "sha256": "246a1cffbeadf555d2e047eb178135e104045e66380cde25f086aea6db0ed312",
+          "bytes": 1123,
+          "url": "https://github.com/PDTFawks/enfusion-community-documentation/blob/3ae009445515ebf91fde92952d7b9c898ff2ccba/themes/hugo-geekdoc/LICENSE"
+        },
+        {
+          "relative": "themes/hugo-geekdoc/static/js/273-0f8b4fc3.chunk.min.js.LICENSE.txt",
+          "sha256": "208a100df74719dca76c3be84fdb35145d70679599d4ec4534b9709e404e8c85",
+          "bytes": 74,
+          "url": "https://github.com/PDTFawks/enfusion-community-documentation/blob/3ae009445515ebf91fde92952d7b9c898ff2ccba/themes/hugo-geekdoc/static/js/273-0f8b4fc3.chunk.min.js.LICENSE.txt"
+        },
+        {
+          "relative": "themes/hugo-geekdoc/static/js/main-4f8bb62c.bundle.min.js.LICENSE.txt",
+          "sha256": "08253e0f29ea53ce3ba5fc47908e23ee5367c4cff4b6863ff0747b56e726d917",
+          "bytes": 93,
+          "url": "https://github.com/PDTFawks/enfusion-community-documentation/blob/3ae009445515ebf91fde92952d7b9c898ff2ccba/themes/hugo-geekdoc/static/js/main-4f8bb62c.bundle.min.js.LICENSE.txt"
+        },
+        {
+          "relative": "themes/hugo-geekdoc/static/js/search-1c4cfb2d.bundle.min.js.LICENSE.txt",
+          "sha256": "dffa76886513ecd966a8fa627435f65904b67cf9d7393f0ac8206b9d57849f46",
+          "bytes": 178,
+          "url": "https://github.com/PDTFawks/enfusion-community-documentation/blob/3ae009445515ebf91fde92952d7b9c898ff2ccba/themes/hugo-geekdoc/static/js/search-1c4cfb2d.bundle.min.js.LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "dataset": "Arkensor__EnfusionDatabaseFramework",
+      "source_url": "https://github.com/Arkensor/EnfusionDatabaseFramework",
+      "commit": "9a92e9a3aad75704f6d35bf543563f373a731a1a",
+      "archive_sha256": "04a870c15b5f64e98a518adb3e62afba009236e3dc3faeac4e13e5013e7e8a48",
+      "attribution": "Copyright (c) 2023 Arkensor",
+      "license_scope": "MIT for repository Software; separately owned assets/dependencies remain separate.",
+      "conditions": [
+        "Retain copyright and complete permission/disclaimer notice in copies or substantial portions.",
+        "Commercial use/modification/redistribution permitted subject to notice retention; MIT does not erase third-party rights."
+      ],
+      "exceptions": [
+        "ATTRIBUTIONS.txt names database icons by Freepik / Flaticon. Check asset terms separately; repository MIT alone is not proof for icon redistribution."
+      ],
+      "publication_policy": "Reference-only now; direct incorporation requires exact source/commit/files and complete MIT notice.",
+      "distribution_status": "reference_only_not_bundled",
+      "license_evidence": [
+        {
+          "relative": "ATTRIBUTIONS.txt",
+          "sha256": "6e6facd12aac91223d64ffc2f36146ed32ffe1a3a1399cf66a6b66823ff5eb3d",
+          "bytes": 89,
+          "url": "https://github.com/Arkensor/EnfusionDatabaseFramework/blob/9a92e9a3aad75704f6d35bf543563f373a731a1a/ATTRIBUTIONS.txt"
+        },
+        {
+          "relative": "LICENSE.txt",
+          "sha256": "3f8b1020647480edda6ee583e36f71c175dc6511e341cbd6f5d47d3511bf4965",
+          "bytes": 1065,
+          "url": "https://github.com/Arkensor/EnfusionDatabaseFramework/blob/9a92e9a3aad75704f6d35bf543563f373a731a1a/LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "dataset": "TIMAN-group__PlugMem",
+      "source_url": "https://github.com/TIMAN-group/PlugMem",
+      "commit": "3b2ce75257d40bca8fac3f78e54e22ea41d92529",
+      "archive_sha256": "a88c6accef9db8f9207efbce29b59f81752c4a4877afdad7c69b5f703d5425a0",
+      "license_scope": "Root Apache-2.0, with separate plugin/data declarations requiring per-component review.",
+      "conditions": [
+        "Provide Apache2 license to recipients.",
+        "Mark changed files prominently and preserve applicable copyright/patent/trademark/attribution notices.",
+        "Preserve applicable NOTICE if supplied. No root NOTICE found in full pinned ZIP.",
+        "No trademark branding grant."
+      ],
+      "exceptions": [
+        "plugmem-coding-claude-code/README.md:58 says MIT but no separate complete MIT LICENSE found in captured license inventory; resolve scope before copying that subcomponent.",
+        "Root README.md:190 identifies human WebArena demonstrations as CC BY4.0, available externally on Google Drive; not blanket Apache2 data."
+      ],
+      "publication_policy": "Reference-only; source/adapters not shipped. Review exact subdir and dependencies before direct integration.",
+      "distribution_status": "reference_only_not_bundled",
+      "license_evidence": [
+        {
+          "relative": "LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357,
+          "url": "https://github.com/TIMAN-group/PlugMem/blob/3b2ce75257d40bca8fac3f78e54e22ea41d92529/LICENSE"
+        }
+      ]
+    },
+    {
+      "dataset": "StarDZ-Team__DayZ-Modding-Wiki",
+      "source_url": "https://github.com/StarDZ-Team/DayZ-Modding-Wiki",
+      "commit": "e8d971e3941c274befdd6596baba2e5119efb3e4",
+      "archive_sha256": "a6e295c8d6929527c6a10a2f25312d2d2aeb9615284dc29de9178fd107cd9309",
+      "attribution": "Copyright (c) 2026 StarDZ Team",
+      "license_scope": "Documentation CC BY-SA4.0; code examples MIT. Actual filename LICENCE; README LICENSE links broken.",
+      "conditions": [
+        "Docs: retain creator/copyright/license/disclaimer notices, identify source, link license and indicate modifications.",
+        "Adapted docs: contributions under CC BY-SA4.0 or permitted compatible license; no additional legal/technical restrictions on CC-covered material.",
+        "Code examples: retain full MIT copyright/permission/disclaimer for copies/substantial portions.",
+        "No automatic permission to donor code, images, trademarks or patents beyond upstream rights."
+      ],
+      "exceptions": [
+        "README Reference Material expressly disclaims per-snippet provenance guarantee and lists external projects under own licenses. Wiki MIT is not proof of rights to copied donor snippets/assets."
+      ],
+      "publication_policy": "Keep source corpus/license separately identified. Independently verified facts/implementation differ from copying/translation/adaptation. Any published documentation adaptations need explicit CC BY-SA scope, not blanket proprietary restriction.",
+      "distribution_status": "reference_only_not_bundled",
+      "license_evidence": [
+        {
+          "relative": "LICENCE",
+          "sha256": "d759f569c88b8d9bfe6a0ed096c67516699fe88679687c05d3635362e6007260",
+          "bytes": 2068,
+          "url": "https://github.com/StarDZ-Team/DayZ-Modding-Wiki/blob/e8d971e3941c274befdd6596baba2e5119efb3e4/LICENCE"
+        }
+      ]
+    }
+  ],
+  "content_check": {
+    "baseline_tracked_files": 154,
+    "reference_files_screened": 33435,
+    "exact_file_matches": 0,
+    "threshold_similarity_candidates": 0,
+    "thresholds": [
+      "5 nonblank whitespace-normalized lines totaling at least160chars/100alnum",
+      "24normalized word runs totaling at least140chars for Markdown"
+    ],
+    "release_zip_version": "2.0.3",
+    "release_zip_sha256": "2cbbf75fd687c2856f26e4e938c429d39bc3c1efffd751eb2804487986efeb8b",
+    "release_zip_equals_baseline_tree": true,
+    "limitations": [
+      "Thresholds: exact bytes,5nonblank normalized lines >=160chars,24word runs >=140chars. Not fuzzy semantic plagiarism detection.",
+      "Common protocols, notices and API fragments can match; candidates need human review.",
+      "Declared downloaded snapshots and English Wiki only; does not prove universal originality or resolve unrecorded sources."
+    ]
+  },
+  "release_rule": "New copied/adapted material requires a new exact-path review and compatible license/notice scope before distribution; this file grants no rights.",
+  "not_granted": [
+    "Permission to relicense third-party material as proprietary",
+    "Permission to vendor entire local KnowledgeBase",
+    "Universal guarantee of legal clearance or originality",
+    "Coverage for future imports or changed upstream versions"
+  ],
+  "additional_donor_boundaries": [
+    {
+      "name": "DayZ Expansion Core/AI",
+      "license": "CC BY-NC-ND4.0 installed LICENSE; NOTICE states all code under that license.",
+      "policy": "No code/assets/docs/PBO or adapted donor implementation in Workbench. References and independently verified general facts only. Do not place code under Workbench proprietary license. Any future code transfer requires explicit rights evaluation and potentially permission.",
+      "verification_limit": "Metadata LICENSE/NOTICE match snapshot. PBOs were not all rehashed here; no Git commit asserted for installed mods.",
+      "source": "https://github.com/salutesh/DayZ-Expansion-Scripts",
+      "evidence": [
+        {
+          "file": "LICENSE",
+          "sha256": "16e9c501c7c566dcb99dabf906a859f705a0f63191ac304e7f393d9fee47ede4"
+        },
+        {
+          "file": "NOTICE.txt",
+          "sha256": "f533bf5ae12e10d422441485c6b00eb3f4817f9367c0ba55dba4404010e21107"
+        }
+      ]
+    },
+    {
+      "name": "InediaInfectedAI",
+      "license": "Repository describes itself as wiki repository; visible root README only. No redistribution license for wiki or mod established from examined GitHub pages. Public availability is not license grant.",
+      "policy": "Do not vendor Inedia PBO, extracted scripts, images, copied wiki or adaptations in Workbench. Use source links and independently designed mechanisms. Unclear rights treated as not granted.",
+      "verification_limit": "The prior read-only extracted research snapshot exists; no protection bypass attempted, no extraction/run/repack/deploy now. Permission to use on server does not authorize relicensing source in an agent package.",
+      "source": "https://github.com/ysaroka/InediaInfectedAI",
+      "author_terms_source": "https://steamcommunity.com/sharedfiles/filedetails/?id=3031784065",
+      "repack_reupload_permission": "Not granted by examined author description except its named exceptions; do not infer from use-on-server permission."
+    }
+  ]
+}
