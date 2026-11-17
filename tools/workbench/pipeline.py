@@ -21,7 +21,7 @@ import time
 import uuid
 
 
-VERSION = "2.0.2"
+VERSION = "2.0.5"
 AGENT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_TOOLS = None
 WRITE_ROOT_KEYS = ("workspace_root", "test_workspace", "runs_root", "reports_root", "builds_root", "temp_root")
@@ -678,12 +678,33 @@ def build(source, output, tools=DEFAULT_TOOLS, temp=None, run=False, timeout=180
     current_sources = {path.relative_to(source).as_posix(): path for path in package_files(source)}
     if set(current_sources) != set(source_hashes):
         raise PipelineError("Состав исходников изменился во время сборки")
+    expected_entries = {relative.casefold() for relative in source_hashes if relative != "$PBOPREFIX$"}
+    converted_config = (backend == "addonbuilder" and "config.cpp" in expected_entries
+                        and "config.bin" not in expected_entries and "config.cpp" not in entries
+                        and "config.bin" in entries)
+    generated_entries = []
+    for name in sorted(set(entries) - expected_entries):
+        entry = entries[name]
+        reason = None
+        if backend == "addonbuilder":
+            if name == "texheaders.bin":
+                reason = "AddonBuilder texture headers"
+            elif name == "config.bin" and converted_config:
+                reason = "AddonBuilder config.cpp conversion"
+            elif (name == "config.cpp" and "config.bin" in expected_entries
+                  and "config.cpp" not in expected_entries and entry["packing"] == 0
+                  and entry["size"] == 0 and entry["original_size"] == 0):
+                reason = "AddonBuilder empty config.cpp companion"
+        if reason is None:
+            raise PipelineError("Неожиданный PBO entry вне исходников: " + entry["name"])
+        generated_entries.append({"name": entry["name"], "reason": reason, "content_verified": False})
+        skipped_content.append("Семантика generated entry не проверена: " + entry["name"])
     for relative, digest in source_hashes.items():
         if relative == "$PBOPREFIX$":
             continue
         entry = entries.get(relative.casefold())
         if entry is None:
-            if relative.casefold() == "config.cpp" and "config.bin" in entries:
+            if relative.casefold() == "config.cpp" and converted_config:
                 skipped_content.append("config.cpp преобразован в config.bin")
                 continue
             raise PipelineError("В PBO отсутствует исходный entry: " + relative)
@@ -710,7 +731,8 @@ def build(source, output, tools=DEFAULT_TOOLS, temp=None, run=False, timeout=180
         "prefix": prefix, "command": command, "returncode": returncode, "backend": backend, "pack_only": True,
         "compilation": {"Enforce": "not_run", "Binarize": "not_run", "config_conversion": "not_run" if backend == "builtin" else "not_claimed"},
         "session": str(session), "source_hashes": source_hashes, "content_verified": verified,
-        "coverage": ["lint", "deterministic uncompressed PBO" if backend == "builtin" else "реальный AddonBuilder", "свежий отдельный output", "PBO readback/prefix/entries", "SHA256 несжатых entries", "source drift"],
+        "generated_entries": generated_entries,
+        "coverage": ["lint", "deterministic uncompressed PBO" if backend == "builtin" else "реальный AddonBuilder", "свежий отдельный output", "PBO readback/prefix/entries", "полный inventory с явными generated исключениями", "SHA256 несжатых entries", "source drift"],
         "skipped": ["Binarize", "Enforce-компиляция", "игровое поведение", "deployment", "подпись"] + skipped_content,
     }
     (output / (expected.name + ".receipt.json")).write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding="utf-8")

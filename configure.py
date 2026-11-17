@@ -19,7 +19,7 @@ import sys
 import uuid
 
 
-VERSION = "2.0.4"
+VERSION = "2.0.5"
 ROOT = Path(__file__).resolve().parent
 SCOPES = {
     "dayz": ("DayZ", ["BohemiaInteractive__DayZ-Script-Diff"]),

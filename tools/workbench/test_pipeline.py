@@ -83,6 +83,17 @@ class PipelineTests(unittest.TestCase):
         write_pbo(output / (stage.name + ".pbo"), entries, prefix=pipeline.prefix_for(stage))
         return subprocess.CompletedProcess(command, 0, "Build succeeded", "")
 
+    def builder_with_entries(self, transform):
+        def builder(command, **arguments):
+            completed = self.fake_builder(command, **arguments)
+            stage = Path(command[1])
+            entries = [(file.relative_to(stage).as_posix(), file.read_bytes(), 0)
+                       for file in pipeline.package_files(stage) if file.name != "$PBOPREFIX$"]
+            write_pbo(Path(command[2]) / (stage.name + ".pbo"), transform(entries),
+                      prefix=pipeline.prefix_for(stage))
+            return completed
+        return builder
+
     def test_scaffold_is_lintable_and_does_not_overwrite(self):
         source = self.source()
         self.assertEqual(pipeline.lint(source)["status"], "passed")
@@ -265,6 +276,117 @@ class PipelineTests(unittest.TestCase):
             result = pipeline.build(source, self.output, self.tools, self.temp, run=True, backend="addonbuilder")
         self.assertEqual(result["status"], "failed")
         self.assertEqual(old.read_bytes(), b"previous")
+
+    def test_unknown_addonbuilder_entries_preserve_previous_output_and_receipt(self):
+        source = self.source()
+        self.output.mkdir()
+        old = self.output / "TestMod.pbo"
+        receipt = self.output / "TestMod.pbo.receipt.json"
+        old.write_bytes(b"previous build")
+        receipt.write_bytes(b"previous receipt")
+        for name in ("deleted.ogg", "Scripts/4_World/Stale.c", "Nested/texHeaders.bin",
+                     "Nested/config.bin", "config.bin"):
+            with self.subTest(name=name):
+                builder = self.builder_with_entries(lambda entries: entries + [(name, b"stale", 0)])
+                with patch.object(pipeline.subprocess, "run", side_effect=builder):
+                    with self.assertRaisesRegex(pipeline.PipelineError, "Неожиданный PBO entry"):
+                        pipeline.build(source, self.output, self.tools, self.temp, run=True, backend="addonbuilder")
+                self.assertEqual(old.read_bytes(), b"previous build")
+                self.assertEqual(receipt.read_bytes(), b"previous receipt")
+
+    def test_addonbuilder_root_texture_headers_are_explicitly_unverified_generated_data(self):
+        source = self.source()
+        builder = self.builder_with_entries(lambda entries: entries + [("TeXhEaDeRs.BIN", b"headers", 0)])
+        with patch.object(pipeline.subprocess, "run", side_effect=builder):
+            result = pipeline.build(source, self.output, self.tools, self.temp, run=True, backend="addonbuilder")
+        self.assertEqual(result["status"], "passed")
+        self.assertEqual(result["generated_entries"], [{"name": "TeXhEaDeRs.BIN",
+                         "reason": "AddonBuilder texture headers", "content_verified": False}])
+        self.assertNotIn("TeXhEaDeRs.BIN", result["content_verified"])
+        self.assertEqual(result["compilation"]["Enforce"], "not_run")
+
+    def test_addonbuilder_config_conversion_requires_missing_source_cpp_entry(self):
+        source = self.source()
+        def convert(entries):
+            return [entry for entry in entries if entry[0].casefold() != "config.cpp"] + [
+                ("CONFIG.BIN", b"generated config format not validated", 0)]
+        with patch.object(pipeline.subprocess, "run", side_effect=self.builder_with_entries(convert)):
+            result = pipeline.build(source, self.output, self.tools, self.temp, run=True, backend="addonbuilder")
+        self.assertEqual(result["status"], "passed")
+        self.assertEqual(result["generated_entries"], [{"name": "CONFIG.BIN",
+                         "reason": "AddonBuilder config.cpp conversion", "content_verified": False}])
+        self.assertIn("config.cpp преобразован в config.bin", result["skipped"])
+        self.assertNotIn("config.cpp", result["content_verified"])
+
+    def test_addonbuilder_binary_source_allows_only_empty_uncompressed_root_cpp(self):
+        source = self.source()
+        (source / "config.cpp").unlink()
+        (source / "config.bin").write_bytes(b"source binary")
+        builder = self.builder_with_entries(lambda entries: entries + [("config.cpp", b"", 0)])
+        with patch.object(pipeline.subprocess, "run", side_effect=builder):
+            result = pipeline.build(source, self.output, self.tools, self.temp, run=True, backend="addonbuilder")
+        self.assertEqual(result["status"], "passed")
+        self.assertIn("config.bin", result["content_verified"])
+        self.assertEqual(result["generated_entries"], [{"name": "config.cpp",
+                         "reason": "AddonBuilder empty config.cpp companion", "content_verified": False}])
+        old = (self.output / "TestMod.pbo").read_bytes()
+        for name, data, packing in (("config.cpp", b"unexpected text", 0),
+                                    ("config.cpp", b"", pipeline.CPRS),
+                                    ("Nested/config.cpp", b"", 0)):
+            with self.subTest(name=name, data=data, packing=packing):
+                builder = self.builder_with_entries(lambda entries: entries + [(name, data, packing)])
+                with patch.object(pipeline.subprocess, "run", side_effect=builder):
+                    with self.assertRaisesRegex(pipeline.PipelineError, "Неожиданный PBO entry"):
+                        pipeline.build(source, self.output, self.tools, self.temp, run=True, backend="addonbuilder")
+                self.assertEqual((self.output / "TestMod.pbo").read_bytes(), old)
+
+    def test_existing_source_config_bin_does_not_excuse_missing_source_cpp(self):
+        source = self.source()
+        (source / "config.bin").write_bytes(b"source binary")
+        builder = self.builder_with_entries(lambda entries: [entry for entry in entries
+                                            if entry[0].casefold() != "config.cpp"])
+        with patch.object(pipeline.subprocess, "run", side_effect=builder):
+            with self.assertRaisesRegex(pipeline.PipelineError, "отсутствует исходный entry"):
+                pipeline.build(source, self.output, self.tools, self.temp, run=True, backend="addonbuilder")
+        self.assertFalse((self.output / "TestMod.pbo").exists())
+
+    def test_builtin_inventory_has_no_generated_entry_exceptions(self):
+        source = self.source()
+        result = pipeline.build(source, self.output, temp=self.temp, run=True)
+        old = (self.output / "TestMod.pbo").read_bytes()
+        self.assertEqual(result["generated_entries"], [])
+        for name in ("texHeaders.bin", "config.bin", "Scripts/4_World/Stale.c"):
+            with self.subTest(name=name):
+                def extra_writer(stage, output, prefix):
+                    entries = [(file.relative_to(stage).as_posix(), file.read_bytes(), 0)
+                               for file in pipeline.package_files(stage) if file.name != "$PBOPREFIX$"]
+                    write_pbo(output, entries + [(name, b"extra", 0)], prefix=prefix)
+                with patch.object(pipeline, "write_uncompressed_pbo", side_effect=extra_writer):
+                    with self.assertRaisesRegex(pipeline.PipelineError, "Неожиданный PBO entry"):
+                        pipeline.build(source, self.output, temp=self.temp, run=True)
+                self.assertEqual((self.output / "TestMod.pbo").read_bytes(), old)
+
+    def test_builtin_cannot_substitute_generated_bin_for_source_cpp(self):
+        source = self.source()
+        def converted_writer(stage, output, prefix):
+            entries = [(file.relative_to(stage).as_posix(), file.read_bytes(), 0)
+                       for file in pipeline.package_files(stage)
+                       if file.name not in {"$PBOPREFIX$", "config.cpp"}]
+            write_pbo(output, entries + [("config.bin", b"generated", 0)], prefix=prefix)
+        with patch.object(pipeline, "write_uncompressed_pbo", side_effect=converted_writer):
+            with self.assertRaisesRegex(pipeline.PipelineError, "Неожиданный PBO entry"):
+                pipeline.build(source, self.output, temp=self.temp, run=True)
+        self.assertFalse((self.output / "TestMod.pbo").exists())
+
+    def test_source_entry_casefold_is_used_for_inventory_and_content(self):
+        source = self.source()
+        builder = self.builder_with_entries(lambda entries: [(name.upper(), data, packing)
+                                            for name, data, packing in entries])
+        with patch.object(pipeline.subprocess, "run", side_effect=builder):
+            result = pipeline.build(source, self.output, self.tools, self.temp, run=True, backend="addonbuilder")
+        self.assertEqual(result["status"], "passed")
+        self.assertEqual(result["generated_entries"], [])
+        self.assertIn("config.cpp", result["content_verified"])
 
     def test_pbo_readback_mismatch_does_not_replace_output(self):
         source = self.source()
